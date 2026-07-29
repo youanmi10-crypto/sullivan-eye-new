@@ -65,15 +65,13 @@ export default function ProductPlaceholder() {
           ease: [0.22, 1, 0.36, 1],
         }}
         style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-        className="relative mx-auto h-[min(34vh,23rem)] w-full will-change-transform"
+        className="relative mx-auto h-[min(46vh,31rem)] w-full will-change-transform"
       >
-        {/* 제품 이미지 — 세로형 원본의 여백을 줄이기 위해 확대 */}
-        <Image
-          src="/images/sullivan-eye.png"
+        {/* 제품 이미지 — 2배 확대, fill 문제 해결을 위해 img 태그 사용 */}
+        <img
+          src="/images/glass3.png"
           alt="SULLIVAN EYE"
-          fill
-          priority
-          className="scale-[2.3] object-contain"
+          className="w-full h-auto object-contain scale-[1.5]"
         />
       </motion.div>
     </div>

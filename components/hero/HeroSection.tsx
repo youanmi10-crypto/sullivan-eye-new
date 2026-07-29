@@ -44,7 +44,7 @@ export default function HeroSection() {
             opacity: productOpacity,
             scale: productScale,
           }}
-          className="mt-14 w-full max-w-[min(72rem,88vh)] sm:mt-16 will-change-transform"
+          className="w-full max-w-[min(72rem,88vh)] pt-20 sm:pt-24 md:pt-28 will-change-transform"
         >
           <ProductPlaceholder />
         </motion.div>
