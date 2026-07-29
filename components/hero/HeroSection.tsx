@@ -1,42 +1,22 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
 import HeroText from "./HeroText";
 
 export default function HeroSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  // 스크롤 시 페이드아웃
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end end"],
-  });
-  const opacity = useTransform(scrollYProgress, [0.2, 1], [1, 0]);
-
   return (
-    <motion.section
-      ref={sectionRef}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1.2, ease: "easeOut" }}
-      className="relative h-[192vh] w-full"
-    >
-      <motion.div
-        style={{ opacity }}
-        className="sticky top-0 flex h-screen w-full flex-col items-center justify-center overflow-hidden px-6 sm:px-8"
-      >
+    <section className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-[#050505] px-6 sm:px-8">
+      <div className="flex w-full max-w-4xl flex-col items-center text-center">
         <HeroText />
 
         {/* Product Image */}
-        <div className="w-[min(55vw,37.5rem)]">
+        <div className="mt-12 w-[min(38vw,26rem)] sm:mt-16 md:mt-20">
           <img
             src="/images/glass3.png"
             alt="SULLIVAN EYE"
-            className="h-auto w-full object-contain scale-[1.8]"
+            className="h-auto w-full object-contain"
           />
         </div>
-      </motion.div>
-    </motion.section>
+      </div>
+    </section>
   );
 }
