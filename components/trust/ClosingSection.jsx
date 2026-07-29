@@ -106,9 +106,9 @@ export default function ClosingSection() {
           className="mt-16 font-medium leading-snug text-white sm:mt-20"
           style={{ fontSize: 'clamp(1.75rem, 6vw, 3.25rem)' }}
         >
-          세상을 보는 방식이 달라지면,
+          세상을 보는 방식이 달라지면
           <br />
-          당신의 삶도 달라집니다.
+          당신의 삶도 달라집니다
         </motion.p>
 
         {/* 메인 타이틀 SULLIVAN EYE — 단어 전체가 선명해지는 효과 */}
