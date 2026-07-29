@@ -29,7 +29,7 @@ export default function DesignProductPlaceholder() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-        className="relative mx-auto h-[min(60vh,39rem)] w-full will-change-transform"
+        className="relative mx-auto h-[min(60vh,39rem)] w-full will-change-transform max-[768px]:h-[min(45vh,22rem)] max-[768px]:max-w-[300px]"
       >
         <motion.div
           aria-hidden

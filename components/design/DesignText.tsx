@@ -52,7 +52,7 @@ export default function DesignText() {
       {/* 메인 타이틀 */}
       <motion.h2
         variants={fadeUp}
-        className="mt-10 text-center text-4xl font-bold leading-[1.25] text-white sm:text-5xl md:text-6xl"
+        className="mt-10 text-center text-4xl font-bold leading-[1.25] text-white sm:text-5xl md:text-6xl max-[768px]:mt-8 max-[768px]:text-[30px] max-[768px]:leading-snug"
       >
         웨어러블 AI의
         <br />새로운 기준을 만나다
@@ -64,7 +64,7 @@ export default function DesignText() {
           <motion.p
             key={line}
             variants={fadeUp}
-            className="text-center text-base leading-loose text-neutral-300 sm:text-lg"
+            className="text-center text-base leading-loose text-neutral-300 sm:text-lg max-[768px]:text-[15px] max-[768px]:leading-relaxed"
           >
             {line}
           </motion.p>

@@ -88,7 +88,7 @@ export default function PartnersSection() {
         className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2"
       >
         <div
-          className="h-[600px] w-[1000px] sm:h-[800px] sm:w-[1400px]"
+          className="h-[600px] w-[1000px] sm:h-[800px] sm:w-[1400px] max-[768px]:h-[300px] max-[768px]:w-[140vw] max-[768px]:opacity-50"
           style={{
             background:
               'radial-gradient(ellipse 50% 50% at 50% 0%, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 70%)',
@@ -115,7 +115,7 @@ export default function PartnersSection() {
             className="font-bold leading-[1.25] text-white"
             style={{ fontSize: 'clamp(1.6rem, 4.6vw, 3.4rem)' }}
           >
-            <span className="whitespace-nowrap">
+            <span className="whitespace-nowrap max-[768px]:whitespace-normal">
               국내 주요 대기업 및 국민권익위원회와
             </span>
             <br />
@@ -145,11 +145,11 @@ export default function PartnersSection() {
               className="group w-full"
             >
               <div className="rounded-[20px] px-6 py-8 text-center transition-colors duration-300 hover:bg-white/[0.03] sm:px-10">
-                <p className="mb-3 text-[1.5rem] font-bold leading-tight text-white sm:text-[2.5rem]">
+                <p className="mb-3 text-[1.5rem] font-bold leading-tight text-white sm:text-[2.5rem] max-[768px]:text-[22px]">
                   {p.name}
                 </p>
                 <div
-                  className="space-y-1 text-sm leading-[1.7] text-white/90 sm:text-base"
+                  className="space-y-1 text-sm leading-[1.7] text-white/90 sm:text-base max-[768px]:text-[15px]"
                 >
                   {p.desc.map((line, j) => (
                     <p key={j}>{line}</p>
@@ -166,7 +166,7 @@ export default function PartnersSection() {
           whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
           transition={{ staggerChildren: 0.1 }}
-          className="mx-auto mt-24 grid max-w-4xl grid-cols-2 items-center gap-x-6 gap-y-10 sm:mt-32 sm:grid-cols-3 lg:grid-cols-5"
+          className="mx-auto mt-24 grid max-w-4xl grid-cols-2 items-center gap-x-6 gap-y-10 sm:mt-32 sm:grid-cols-3 lg:grid-cols-5 max-[768px]:grid-cols-1 max-[768px]:gap-y-8"
         >
           {PARTNER_LOGOS.map((logo) => (
             <motion.div
@@ -185,7 +185,7 @@ export default function PartnersSection() {
               <img
                 src={logo.src}
                 alt={logo.alt}
-                className={`${logo.size} w-auto max-w-[120px] select-none object-contain opacity-100 transition-all duration-300 hover:scale-[1.03]`}
+                className={`${logo.size} w-auto max-w-[120px] select-none object-contain opacity-100 transition-all duration-300 hover:scale-[1.03] max-[768px]:max-w-[140px] max-[768px]:h-auto`}
                 draggable={false}
               />
             </motion.div>

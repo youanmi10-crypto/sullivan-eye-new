@@ -36,7 +36,7 @@ export default function DesignProductSection() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 1.0, ease: "easeOut" }}
-      className="snap-section relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-[#0A0A0A] px-6 py-40 sm:py-56"
+      className="snap-section relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-[#0A0A0A] px-6 py-40 sm:py-56 max-[768px]:h-auto max-[768px]:min-h-svh"
     >
       {/* 안경을 향해 비춰지는 스포트라이트 — 콘텐츠 뒤에 깔림 */}
       <div className="absolute inset-0 z-0">

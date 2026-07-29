@@ -10,7 +10,7 @@ import AIInterface from "./AIInterface";
  */
 export default function TechProductPlaceholder() {
   return (
-    <div className="relative w-full lg:scale-110">
+    <div className="relative w-full lg:scale-110 max-[768px]:max-w-[300px] max-[768px]:mx-auto max-[768px]:scale-100">
       {/* AI 인터페이스 그래픽 — 제품 뒤 배경 */}
       <AIInterface />
 

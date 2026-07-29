@@ -24,10 +24,56 @@ html {
   scroll-snap-align: start;
 }
 
-/* 모바일: 자연스러운 스와이프 (proximity 가 더 부드러움) */
+/* 모바일: 스크롤 스냅 해제 → 일반 세로 스크롤 */
 @media (max-width: 768px) {
   html {
-    scroll-snap-type: y proximity;
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
+
+  /* 섹션 height 고정 제거: 콘텐츠 길이에 맞춰 자연스럽게 늘어남 */
+  .snap-section {
+    min-height: 100svh;
+    height: auto;
+    scroll-snap-align: none;
+  }
+
+  /* 5) 모바일 좌우 여백 통일 (기본 20px) — 섹션/푸터에만 적용(중첩 방지) */
+  section,
+  footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* 한글 줄바꿈: 단어 단위로 자연스럽게 (영어 단어는 그대로) */
+  h1, h2, h3, h4, p, span, div, li, a {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  /* 10) 가로 스크롤 절대 차단 — 안전망 */
+  html,
+  body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+  #__next,
+  main {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* 11) iPhone Safari 주소창 대응: 100vh → 100svh 우선 */
+  /* (컴포넌트의 min-h-screen/100vh 고정은 위 .snap-section 에서 svh로 오버라이드 됨) */
+  .min-h-screen {
+    min-height: 100svh;
+  }
+}
+
+/* 작은 폰(390px 이하)에서도 동일하게 svh 우선 */
+@media (max-width: 430px) {
+  .min-h-screen {
+    min-height: 100svh;
   }
 }
 

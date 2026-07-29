@@ -50,7 +50,7 @@ export default function TechSection() {
         className="relative z-10 mx-auto flex w-full max-w-6xl flex-col will-change-transform"
       >
         {/* 좌: 텍스트 / 우: 제품 + AI 인터페이스 */}
-        <div className="grid grid-cols-1 items-center gap-20 lg:grid-cols-2 lg:gap-12">
+        <div className="grid grid-cols-1 items-center gap-20 max-[768px]:grid-cols-1 lg:grid-cols-2 lg:gap-12">
           <motion.div style={{ y: textParallax }} className="will-change-transform">
             <TechText />
           </motion.div>

@@ -48,7 +48,7 @@ export default function TechText() {
       {/* 메인 타이틀 */}
       <motion.h2
         variants={fadeUp}
-        className="mt-8 text-4xl font-bold leading-[1.2] text-white sm:text-5xl md:text-6xl"
+        className="mt-8 text-4xl font-bold leading-[1.2] text-white sm:text-5xl md:text-6xl max-[768px]:mt-6 max-[768px]:text-[30px] max-[768px]:leading-snug"
       >
         AI가
         <br />
@@ -61,7 +61,7 @@ export default function TechText() {
           <motion.p
             key={line}
             variants={fadeUp}
-            className="text-base leading-loose text-neutral-300 sm:text-lg"
+            className="text-base leading-loose text-neutral-300 sm:text-lg max-[768px]:text-[15px] max-[768px]:leading-relaxed"
           >
             {line}
           </motion.p>
@@ -74,7 +74,7 @@ export default function TechText() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.6 }}
         transition={{ duration: 0.9, ease: EASE, delay: 0.9 }}
-        className="mt-12 text-base leading-loose text-neutral-400 sm:text-lg"
+        className="mt-12 text-base leading-loose text-neutral-400 sm:text-lg max-[768px]:mt-8 max-[768px]:text-[15px] max-[768px]:leading-relaxed"
       >
         <p>복잡한 기술은 보이지 않습니다.</p>
         <p className="mt-2">

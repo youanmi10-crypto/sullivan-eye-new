@@ -125,7 +125,7 @@ export default function AwardsSection() {
         className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2"
       >
         <div
-          className="h-[600px] w-[1000px] sm:h-[800px] sm:w-[1400px]"
+          className="h-[600px] w-[1000px] sm:h-[800px] sm:w-[1400px] max-[768px]:h-[300px] max-[768px]:w-[140vw] max-[768px]:opacity-50"
           style={{
             background:
               'radial-gradient(ellipse 50% 50% at 50% 0%, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 65%)',

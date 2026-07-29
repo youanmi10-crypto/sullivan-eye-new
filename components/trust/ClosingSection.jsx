@@ -70,7 +70,7 @@ export default function ClosingSection() {
         className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2"
       >
         <div
-          className="h-[700px] w-[1100px] sm:h-[900px] sm:w-[1500px]"
+          className="h-[700px] w-[1100px] sm:h-[900px] sm:w-[1500px] max-[768px]:h-[320px] max-[768px]:w-[140vw]"
           style={{
             background:
               'radial-gradient(ellipse 50% 50% at 50% 0%, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 70%)',
@@ -164,7 +164,7 @@ export default function ClosingSection() {
                   <img
                     src={productImg}
                     alt="SULLIVAN EYE"
-                    className="h-auto w-[840px] sm:w-[1040px]"
+                    className="h-auto w-[840px] sm:w-[1040px] max-[768px]:w-full max-[768px]:max-w-[300px]"
                   />
                 ) : (
                   <ProductFallback />

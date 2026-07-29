@@ -19,7 +19,7 @@ export default function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="snap-section relative flex min-h-screen w-full flex-col items-center bg-[#0A0A0A] px-6"
+      className="snap-section relative flex min-h-screen w-full flex-col items-center bg-[#0A0A0A] px-6 max-[768px]:h-auto max-[768px]:min-h-svh"
     >
       {/* Title — 자간 좁힘 */}
       <motion.h1
@@ -27,7 +27,7 @@ export default function HeroSection() {
         animate={{ opacity: [0, 1] }}
         transition={{ duration: 1.2, delay: 0.5 }}
         style={{ letterSpacing: "0.1em" }}
-        className="mt-[209px] text-center text-6xl font-semibold leading-tight tracking-tight text-white sm:text-7xl md:text-8xl"
+        className="mt-[209px] text-center text-6xl font-semibold leading-tight tracking-tight text-white sm:text-7xl md:text-8xl max-[768px]:mt-[120px] max-[768px]:text-[40px] max-[768px]:leading-[1.15]"
       >
         SULLIVAN&nbsp;EYE
       </motion.h1>
@@ -44,7 +44,7 @@ export default function HeroSection() {
       </motion.p>
 
       {/* Glasses + 뒷조명을 함께 정렬하는 컨테이너 */}
-      <div className="relative mt-[-140px] w-[min(54vw,36rem)] sm:w-[min(54vw,42rem)]">
+      <div className="relative mt-[-140px] w-[min(54vw,36rem)] sm:w-[min(54vw,42rem)] max-[768px]:mt-[-60px] max-[768px]:w-full max-[768px]:max-w-[340px]">
         {/* 제품 뒤 은은한 원형 조명 — 항상 표시 (스크롤/페이드인 영향 없음) */}
         <div
           aria-hidden

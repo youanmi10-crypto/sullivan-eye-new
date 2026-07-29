@@ -25,7 +25,7 @@ export default function DesignFeatures() {
   return (
     <motion.div
       variants={{ show: { transition: { staggerChildren: 0.18 } } }}
-      className="mx-auto flex max-w-4xl flex-col items-stretch justify-center gap-10 sm:flex-row sm:gap-0"
+      className="mx-auto flex max-w-4xl flex-col items-stretch justify-center gap-10 max-[768px]:flex-col sm:flex-row sm:gap-0"
     >
       {FEATURES.map(({ Icon, label }, i) => (
         <motion.div
