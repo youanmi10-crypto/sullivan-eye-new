@@ -33,7 +33,7 @@ export default function TechSection() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 1.0, ease: "easeOut" }}
-      className="relative min-h-[150vh] w-full overflow-hidden px-6 py-40 sm:py-56"
+      className="relative min-h-[150vh] w-full overflow-hidden bg-[#0A0A0A] px-6 py-40 sm:py-56"
     >
       {/* 오른쪽 상단에서 내려오는 은은한 Spotlight */}
       <div

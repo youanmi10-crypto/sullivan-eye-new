@@ -11,3 +11,30 @@ body {
 ::selection {
   background: rgba(255, 255, 255, 0.2);
 }
+
+/* ── 1~4번 섹션 스크롤 스냅 (문서 레벨, proximity) ── */
+html {
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+}
+
+/* 1~4번 메인 섹션만 스냅 대상. 5번 이후는 클래스가 없어 자유 스크롤 */
+.snap-section {
+  min-height: 100vh;
+  scroll-snap-align: start;
+}
+
+/* 모바일: 자연스러운 스와이프 (proximity 가 더 부드러움) */
+@media (max-width: 768px) {
+  html {
+    scroll-snap-type: y proximity;
+  }
+}
+
+/* 모션 줄이기 선호 사용자: 스냅/부드러운 스크롤 해제 */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+  }
+}

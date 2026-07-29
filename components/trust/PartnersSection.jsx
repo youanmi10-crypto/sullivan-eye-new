@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { useRef, useEffect, useState } from 'react'
+import { useRef } from 'react'
 
 const easeOut = [0.16, 1, 0.3, 1]
 
@@ -38,30 +38,15 @@ const PARTNERS = [
   },
 ]
 
-const LOGOS = ['SK', 'Samsung', 'BGF', '국민권익위원회', '한국관광공사']
-
-// 화면 중앙에 위치한 항목만 활성화(밝게) 하는 IntersectionObserver 훅
-function useCenterFocus(refs, count) {
-  const [active, setActive] = useState(0)
-  useEffect(() => {
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            const idx = Number(e.target.dataset.idx)
-            setActive(idx)
-          }
-        })
-      },
-      { rootMargin: '-45% 0px -45% 0px', threshold: 0 }
-    )
-    refs.current.forEach((r) => r && obs.observe(r))
-    return () => obs.disconnect()
-  }, [refs, count])
-  return active
-}
-
-// TUAT 워드마크 (에셋 없으므로 CSS/SVG로 재현)
+// 하단 파트너 로고 (실제 로고 이미지)
+const PARTNER_LOGOS = [
+  { src: '/images/partner-sk.png', alt: 'SK텔레콤', size: 'h-20 sm:h-24' },
+  { src: '/images/partner-samsung.png', alt: '삼성전자', size: 'h-10 sm:h-12' },
+  { src: '/images/partner-bgf.svg', alt: 'BGF Retail', size: 'h-7 sm:h-8' },
+  { src: '/images/partner-anti.png', alt: '국민권익위원회', size: 'h-20 sm:h-24' },
+  { src: '/images/partner-kto.png', alt: '한국관광공사', size: 'h-20 sm:h-24' },
+]
+// TUAT 로고 (실제 로고 이미지)
 function TuatLogo() {
   return (
     <motion.div
@@ -71,36 +56,19 @@ function TuatLogo() {
       transition={{ duration: 1.0, ease: easeOut }}
       className="flex flex-col items-center"
     >
-      <svg
-        width="64"
-        height="64"
-        viewBox="0 0 64 64"
-        fill="none"
-        className="mb-5"
-      >
-        <circle
-          cx="32"
-          cy="32"
-          r="28"
-          stroke="rgba(255,255,255,0.85)"
-          strokeWidth="1.2"
-        />
-        <circle cx="32" cy="32" r="3.2" fill="rgba(255,255,255,0.9)" />
-      </svg>
-      <span
-        className="text-2xl font-semibold tracking-[0.35em] text-white"
-        style={{ paddingLeft: '0.35em' }}
-      >
-        TUAT
-      </span>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/images/tuat-logo.png"
+        alt="TUAT"
+        className="mb-5 h-32 w-auto select-none sm:h-40"
+        draggable={false}
+      />
     </motion.div>
   )
 }
 
 export default function PartnersSection() {
   const ref = useRef(null)
-  const itemRefs = useRef([])
-  const active = useCenterFocus(itemRefs, PARTNERS.length)
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -112,7 +80,7 @@ export default function PartnersSection() {
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden px-6 py-28 sm:px-10 sm:py-36"
+      className="relative overflow-hidden bg-[#151515] px-6 py-28 sm:px-10 sm:py-36"
     >
       {/* 상단 중앙 Spot Light (CSS radial-gradient only) */}
       <motion.div
@@ -166,8 +134,6 @@ export default function PartnersSection() {
           {PARTNERS.map((p, i) => (
             <motion.div
               key={p.name}
-              ref={(el) => (itemRefs.current[i] = el)}
-              data-idx={i}
               variants={{
                 hidden: { opacity: 0, y: 40 },
                 show: {
@@ -179,39 +145,32 @@ export default function PartnersSection() {
               className="group w-full"
             >
               <div className="rounded-[20px] px-6 py-8 text-center transition-colors duration-300 hover:bg-white/[0.03] sm:px-10">
-                {/* inner: focus highlight 가 opacity 제어 (entrance 와 충돌 방지) */}
-                <motion.div
-                  animate={{ opacity: active === i ? 1 : 0.7 }}
-                  transition={{ duration: 0.5, ease: 'easeOut' }}
+                <p className="mb-3 text-[1.5rem] font-bold leading-tight text-white sm:text-[2.5rem]">
+                  {p.name}
+                </p>
+                <div
+                  className="space-y-1 text-sm leading-[1.7] text-white/90 sm:text-base"
                 >
-                  <p className="mb-3 text-[1.5rem] font-bold leading-tight text-white sm:text-[2.5rem]">
-                    {p.name}
-                  </p>
-                  <div
-                    className="space-y-1 text-sm leading-[1.7] sm:text-base"
-                    style={{ color: '#CFCFCF' }}
-                  >
-                    {p.desc.map((line, j) => (
-                      <p key={j}>{line}</p>
-                    ))}
-                  </div>
-                </motion.div>
+                  {p.desc.map((line, j) => (
+                    <p key={j}>{line}</p>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* 하단 Partner Logo Strip */}
+        {/* 하단 Partner Logo Strip — 실제 로고 이미지 */}
         <motion.div
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
           transition={{ staggerChildren: 0.1 }}
-          className="mx-auto mt-24 grid max-w-4xl grid-cols-2 gap-x-6 gap-y-10 sm:mt-32 sm:grid-cols-3 lg:grid-cols-5"
+          className="mx-auto mt-24 grid max-w-4xl grid-cols-2 items-center gap-x-6 gap-y-10 sm:mt-32 sm:grid-cols-3 lg:grid-cols-5"
         >
-          {LOGOS.map((logo) => (
+          {PARTNER_LOGOS.map((logo) => (
             <motion.div
-              key={logo}
+              key={logo.src}
               variants={{
                 hidden: { opacity: 0, y: 30 },
                 show: {
@@ -222,9 +181,13 @@ export default function PartnersSection() {
               }}
               className="flex items-center justify-center"
             >
-              <span className="cursor-default text-base font-medium tracking-wide text-white/80 grayscale transition-all duration-300 hover:scale-[1.03] hover:text-white hover:grayscale-0 sm:text-lg">
-                {logo}
-              </span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                className={`${logo.size} w-auto max-w-[120px] select-none object-contain opacity-100 transition-all duration-300 hover:scale-[1.03]`}
+                draggable={false}
+              />
             </motion.div>
           ))}
         </motion.div>

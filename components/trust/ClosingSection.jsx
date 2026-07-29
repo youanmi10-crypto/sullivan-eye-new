@@ -62,7 +62,7 @@ export default function ClosingSection() {
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden px-6 pb-16 pt-28 sm:px-10 sm:pt-36"
+      className="relative overflow-hidden bg-[#111111] px-6 pb-16 pt-28 sm:px-10 sm:pt-36"
     >
       {/* 위쪽 중앙 Spotlight (CSS radial-gradient only) */}
       <motion.div
@@ -164,7 +164,7 @@ export default function ClosingSection() {
                   <img
                     src={productImg}
                     alt="SULLIVAN EYE"
-                    className="h-auto w-[420px] sm:w-[520px]"
+                    className="h-auto w-[840px] sm:w-[1040px]"
                   />
                 ) : (
                   <ProductFallback />

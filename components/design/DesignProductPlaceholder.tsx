@@ -6,6 +6,10 @@ import { motion } from "framer-motion";
 /**
  * Design 섹션 제품 이미지.
  * /public/images/design-product.png
+ *
+ * - 진입: 아래에서 24px 올라오며 opacity 0 → 1
+ * - Idle: 사용자가 의식하지 못할 정도의 미세한 움직임
+ *   (좌우 ±2.5px / 위아래 ±1.5px, 5.5초 주기 ease-in-out 무한)
  */
 export default function DesignProductPlaceholder() {
   return (
@@ -21,19 +25,34 @@ export default function DesignProductPlaceholder() {
       />
 
       <motion.div
-        initial={{ opacity: 0, y: 100, scale: 0.95 }}
-        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
         className="relative mx-auto h-[min(60vh,39rem)] w-full will-change-transform"
       >
-        {/* 제품 이미지 — 세로형 원본의 여백을 줄이기 위해 확대 */}
-        <Image
-          src="/images/design-product.png"
-          alt="SULLIVAN EYE"
-          fill
-          className="scale-[2] object-contain"
-        />
+        <motion.div
+          aria-hidden
+          className="absolute inset-0 will-change-transform"
+          animate={{
+            x: [0, 2.5, 0, -2.5, 0],
+            y: [0, -1.5, 0, 1.5, 0],
+          }}
+          transition={{
+            duration: 5.5,
+            ease: "easeInOut",
+            repeat: Infinity,
+            repeatType: "loop",
+          }}
+        >
+          {/* 제품 이미지 — 세로형 원본의 여백을 줄이기 위해 확대 */}
+          <Image
+            src="/images/design-product.png"
+            alt="SULLIVAN EYE"
+            fill
+            className="scale-[2] object-contain"
+          />
+        </motion.div>
       </motion.div>
     </div>
   );

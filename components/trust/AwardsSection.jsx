@@ -77,7 +77,7 @@ function AwardItem({ year, award, desc, isLast }) {
       variants={itemVariants}
       className="group w-full"
     >
-      <div className="mx-auto w-full max-w-2xl rounded-2xl px-6 py-8 text-center transition-colors duration-300 hover:bg-white/[0.03] sm:px-10">
+      <div className="mx-auto w-full max-w-2xl rounded-2xl px-6 py-8 text-center transition-colors duration-300 hover:bg-white/[0.07] sm:px-10">
         <p
           className="mb-3 text-sm tracking-wide"
           style={{ color: '#D8D8D8' }}
@@ -117,7 +117,7 @@ export default function AwardsSection() {
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden px-6 py-28 sm:px-10 sm:py-36"
+      className="relative overflow-hidden bg-[#0A0A0A] px-6 py-28 sm:px-10 sm:py-36"
     >
       {/* 상단 중앙 Spotlight — CSS radial-gradient only */}
       <motion.div

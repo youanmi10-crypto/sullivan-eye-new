@@ -17,7 +17,7 @@ export default function Footer() {
     <motion.footer
       ref={ref}
       style={{ opacity: fade }}
-      className="border-t border-white/10 px-6 py-16 text-center sm:px-10"
+      className="border-t border-white/10 bg-[#0A0A0A] px-6 py-16 text-center sm:px-10"
     >
       <p className="text-sm font-light tracking-[0.3em] text-white/50">
         SULLIVAN EYE

@@ -12,7 +12,23 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ko">
-      <body className="bg-black text-[#E5E5E5] antialiased">{children}</body>
+      <body className="bg-black text-[#E5E5E5] antialiased">
+        {/* 우측 상단 고정 투아트 로고 버튼 */}
+        <a
+          href="https://www.tuat.kr/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed right-[96px] top-5 z-50 cursor-pointer opacity-90 transition-opacity hover:opacity-100"
+          aria-label="투아트 바로가기"
+        >
+          <img
+            src="/images/tuat-logo.png"
+            alt="투아트"
+            className="h-16 w-auto sm:h-20"
+          />
+        </a>
+        {children}
+      </body>
     </html>
   );
 }

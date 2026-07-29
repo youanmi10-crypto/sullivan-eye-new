@@ -23,7 +23,7 @@ export default function ExperienceSection() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 1.0, ease: "easeOut" }}
-      className="relative min-h-[130vh] w-full overflow-hidden py-24 sm:py-32"
+      className="relative min-h-[130vh] w-full overflow-hidden bg-black py-24 sm:py-32"
     >
       <motion.div
         style={{ y: contentY, opacity: contentOpacity }}

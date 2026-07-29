@@ -38,7 +38,7 @@ export default function ExperienceText() {
       {/* Section Title */}
       <motion.h2
         variants={fadeUp}
-        className="text-4xl font-bold text-white sm:text-5xl md:text-6xl"
+        className="text-6xl font-bold text-white sm:text-7xl md:text-8xl"
       >
         EXPERIENCE
       </motion.h2>

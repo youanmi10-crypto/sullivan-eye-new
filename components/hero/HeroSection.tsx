@@ -1,17 +1,33 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 export default function HeroSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  // 스크롤 진행도(히어로 섹션이 뷰포트를 빠져나갈 때까지 0→1)
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+
+  // 스크롤 내리면 점점 커지고(1 → 1.8) 사라짐(0.5까지 유지 → 1에서 0)
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.8]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1, 0]);
+
   return (
-    <section className="flex h-screen w-full flex-col items-center justify-center bg-[#040404] px-6 sm:px-8">
-      {/* Title — 자간좁힘 */}
+    <section
+      ref={sectionRef}
+      className="snap-section relative flex min-h-screen w-full flex-col items-center bg-[#0A0A0A] px-6"
+    >
+      {/* Title — 자간 좁힘 */}
       <motion.h1
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-        style={{ letterSpacing: "0.15em" }}
-        className="text-center text-5xl font-semibold tracking-tight text-white sm:text-7xl md:text-8xl"
+        initial={{ opacity: 1 }}
+        animate={{ opacity: [0, 1] }}
+        transition={{ duration: 1.2, delay: 0.5 }}
+        style={{ letterSpacing: "0.1em" }}
+        className="mt-[209px] text-center text-6xl font-semibold leading-tight tracking-tight text-white sm:text-7xl md:text-8xl"
       >
         SULLIVAN&nbsp;EYE
       </motion.h1>
@@ -20,26 +36,45 @@ export default function HeroSection() {
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.6 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
         style={{ letterSpacing: "0.5em" }}
-        className="mt-4 text-center text-xs uppercase tracking-[0.5em] text-neutral-400 sm:text-sm"
+        className="mt-6 text-center text-xs uppercase tracking-[0.5em] text-neutral-400 sm:text-sm"
       >
         SEE BEYOND
       </motion.p>
 
-      {/* Glasses Image — 한 스크롤 안에 보이도록 상단에 배치 */}
-      <motion.div
-        initial={{ opacity: 0, y: 32 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
-        className="mt-8 w-[min(40vw,28rem)] sm:mt-10 md:mt-12"
-      >
-        <img
-          src="/images/glass3.png"
-          alt="SULLIVAN EYE"
-          className="h-auto w-full object-contain"
+      {/* Glasses + 뒷조명을 함께 정렬하는 컨테이너 */}
+      <div className="relative mt-[-140px] w-[min(54vw,36rem)] sm:w-[min(54vw,42rem)]">
+        {/* 제품 뒤 은은한 원형 조명 — 항상 표시 (스크롤/페이드인 영향 없음) */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2"
+          style={{
+            width: "130%",
+            aspectRatio: "1 / 1",
+            background:
+              "radial-gradient(circle at center, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 35%, transparent 70%)",
+            filter: "blur(40px)",
+          }}
         />
-      </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.0 }}
+          className="relative z-10"
+        >
+          <motion.div style={{ scale, opacity }}>
+            <img
+              src="/images/glass3.png"
+              alt="SULLIVAN EYE"
+              className="relative z-10 h-auto w-full object-contain"
+            />
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* 하단 여백 */}
+      <div className="mt-auto h-[8vh]" />
     </section>
   );
 }
