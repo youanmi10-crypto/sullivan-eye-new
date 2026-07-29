@@ -52,7 +52,7 @@ function TuatLogo() {
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true, amount: 0.6 }}
+      viewport={{ once: true, amount: 0 }}
       transition={{ duration: 1.0, ease: easeOut }}
       className="flex flex-col items-center"
     >
@@ -107,7 +107,7 @@ export default function PartnersSection() {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0 }}
           transition={{ duration: 1.0, ease: easeOut, delay: 0.3 }}
           className="mb-24 text-center sm:mb-32"
         >
@@ -127,7 +127,7 @@ export default function PartnersSection() {
         <motion.div
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.1 }}
+          viewport={{ once: true, amount: 0 }}
           transition={{ staggerChildren: 0.18 }}
           className="mx-auto flex max-w-2xl flex-col items-center"
         >
@@ -145,7 +145,7 @@ export default function PartnersSection() {
               className="group w-full"
             >
               <div className="rounded-[20px] px-6 py-8 text-center transition-colors duration-300 hover:bg-white/[0.03] sm:px-10">
-                <p className="mb-3 text-[1.5rem] font-bold leading-tight text-white sm:text-[2.5rem] max-[768px]:text-[22px]">
+                <p className="mb-3 text-[1.5rem] font-extrabold leading-tight text-white sm:text-[2.5rem] max-[768px]:text-[22px]">
                   {p.name}
                 </p>
                 <div
@@ -164,7 +164,7 @@ export default function PartnersSection() {
         <motion.div
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0 }}
           transition={{ staggerChildren: 0.1 }}
           className="mx-auto mt-24 grid max-w-4xl grid-cols-2 items-center gap-x-6 gap-y-10 sm:mt-32 sm:grid-cols-3 lg:grid-cols-5 max-[768px]:grid-cols-1 max-[768px]:gap-y-8"
         >

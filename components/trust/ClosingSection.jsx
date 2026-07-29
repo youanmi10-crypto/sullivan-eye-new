@@ -84,7 +84,7 @@ export default function ClosingSection() {
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.6 }}
+          viewport={{ once: true, amount: 0 }}
           transition={{ duration: 1.0, ease: easeOut }}
           className="text-[#F2F2F2]"
           style={{
@@ -101,7 +101,7 @@ export default function ClosingSection() {
         <motion.p
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0 }}
           transition={{ duration: 1.0, ease: easeOut, delay: 0.2 }}
           className="mt-16 font-medium leading-snug text-white sm:mt-20"
           style={{ fontSize: 'clamp(1.75rem, 6vw, 3.25rem)' }}
@@ -115,9 +115,9 @@ export default function ClosingSection() {
         <motion.h2
           initial={{ opacity: 0, scale: 0.96, filter: 'blur(8px)' }}
           whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-          viewport={{ once: true, amount: 0.4 }}
+          viewport={{ once: true, amount: 0 }}
           transition={{ duration: 1.3, ease: easeOut }}
-          className="mt-24 font-extralight tracking-[0.04em] text-white sm:mt-28"
+          className="mt-24 font-bold tracking-[0.04em] text-white sm:mt-28"
           style={{
             fontSize: 'clamp(3.5rem, 13vw, 7.5rem)',
             lineHeight: 1,
@@ -130,7 +130,7 @@ export default function ClosingSection() {
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0 }}
           transition={{ duration: 1.0, ease: easeOut, delay: 0.15 }}
           className="mt-8 font-medium text-white/90"
           style={{ fontSize: 'clamp(1.6rem, 5vw, 3rem)' }}
@@ -143,7 +143,7 @@ export default function ClosingSection() {
           <motion.div
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0 }}
             transition={{ duration: 1.1, ease: easeOut }}
             className="flex justify-center"
           >
@@ -175,8 +175,8 @@ export default function ClosingSection() {
                   <motion.div
                     initial={{ x: '-120%', opacity: 0 }}
                     whileInView={{ x: '120%', opacity: [0, 0.6, 0] }}
-                    viewport={{ once: true, amount: 0.5 }}
-                    transition={{ duration: 1.6, ease: 'easeInOut', delay: 1.2 }}
+                    viewport={{ once: true, amount: 0 }}
+                    transition={{ duration: 1.6, ease: 'easeInOut', delay: 0.2 }}
                     className="pointer-events-none absolute inset-0 overflow-hidden rounded-[40px]"
                   >
                     <div

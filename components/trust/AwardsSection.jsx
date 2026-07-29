@@ -84,7 +84,7 @@ function AwardItem({ year, award, desc, isLast }) {
         >
           {year}
         </p>
-        <h3 className="mb-3 text-xl font-bold text-white sm:text-2xl">
+        <h3 className="mb-3 text-xl font-extrabold text-white sm:text-2xl">
           {award}
         </h3>
         <p className="text-sm leading-relaxed text-white/70 sm:text-base">
@@ -139,7 +139,7 @@ export default function AwardsSection() {
         <motion.div
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0 }}
           variants={headlineVariants}
           className="mb-24 text-center sm:mb-32"
         >
@@ -157,7 +157,7 @@ export default function AwardsSection() {
         <motion.div
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.15 }}
+          viewport={{ once: true, amount: 0 }}
           transition={{ staggerChildren: 0.15, delayChildren: 0.3 }}
           className="flex flex-col items-center"
         >

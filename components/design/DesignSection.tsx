@@ -21,7 +21,7 @@ export default function DesignSection() {
       ref={sectionRef}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true, amount: 0.1 }}
+      viewport={{ once: true, amount: 0 }}
       transition={{ duration: 1.0, ease: "easeOut" }}
       className="snap-section relative min-h-screen w-full overflow-hidden bg-[#111111] px-6 py-40 sm:py-56 max-[768px]:h-auto max-[768px]:min-h-svh"
     >
@@ -38,7 +38,7 @@ export default function DesignSection() {
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true, amount: 0.8 }}
+          viewport={{ once: true, amount: 0 }}
           transition={{ duration: 1.0, ease: "easeOut", delay: 0.3 }}
           className="mt-[calc(8rem-113px)] text-xs tracking-[0.35em] text-neutral-500 sm:mt-[calc(10rem-113px)] sm:text-sm max-[768px]:mt-16 max-[768px]:text-[11px]"
         >

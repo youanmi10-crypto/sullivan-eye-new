@@ -61,7 +61,7 @@ export default function ProductPlaceholder() {
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{
           duration: 1.1,
-          delay: 1.6,
+          delay: 0.2,
           ease: [0.22, 1, 0.36, 1],
         }}
         style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}

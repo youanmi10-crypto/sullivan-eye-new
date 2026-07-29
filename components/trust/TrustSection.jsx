@@ -63,13 +63,13 @@ export default function TrustSection() {
       <motion.section
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0 }}
         className="mx-auto w-full max-w-5xl px-7 sm:px-10"
       >
         {/* HERO TITLE */}
         <motion.h1
           variants={heroTitle}
-          className="text-left font-extralight tracking-[0.06em] text-white"
+          className="text-left font-bold tracking-[0.06em] text-white"
           style={{ fontSize: 'clamp(4rem, 14vw, 9rem)', lineHeight: 0.95 }}
         >
           TRUST
@@ -78,7 +78,7 @@ export default function TrustSection() {
         {/* SUBTITLE */}
         <motion.p
           variants={heroSub}
-          className="mt-6 text-left text-4xl font-bold text-white sm:mt-8 sm:text-5xl"
+          className="mt-6 text-left text-4xl font-extrabold text-white sm:mt-8 sm:text-5xl"
         >
           기술보다 중요한 것은 신뢰
         </motion.p>
@@ -112,7 +112,7 @@ export default function TrustSection() {
         <motion.div
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.6 }}
+          viewport={{ once: true, amount: 0 }}
           className="mx-auto mt-[269px] w-full max-w-5xl px-7 sm:px-10"
         >
           <Divider text="설리번 SW" />
@@ -122,7 +122,7 @@ export default function TrustSection() {
         <motion.div
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0 }}
           variants={cardsContainer}
           className="mx-auto mt-8 w-full max-w-5xl px-4 pb-32 sm:px-10"
         >

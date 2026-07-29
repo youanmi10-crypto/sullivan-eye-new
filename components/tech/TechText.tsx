@@ -27,7 +27,7 @@ export default function TechText() {
       variants={container}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.35 }}
+      viewport={{ once: true, amount: 0 }}
       className="flex flex-col items-start"
     >
       {/* Section Label — letter spacing이 미세하게 줄어들며 등장 */}
@@ -72,8 +72,8 @@ export default function TechText() {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.6 }}
-        transition={{ duration: 0.9, ease: EASE, delay: 0.9 }}
+        viewport={{ once: true, amount: 0 }}
+        transition={{ duration: 0.9, ease: EASE, delay: 0.2 }}
         className="mt-12 text-base leading-loose text-neutral-400 sm:text-lg max-[768px]:mt-8 max-[768px]:text-[15px] max-[768px]:leading-relaxed"
       >
         <p>복잡한 기술은 보이지 않습니다.</p>
@@ -83,8 +83,8 @@ export default function TechText() {
           <motion.strong
             initial={{ color: "#a3a3a3" }}
             whileInView={{ color: "#ffffff" }}
-            viewport={{ once: true, amount: 1 }}
-            transition={{ duration: 1.2, ease: "easeOut", delay: 1.4 }}
+            viewport={{ once: true, amount: 0 }}
+            transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
             className="font-bold"
           >
             단 한 번의 착용입니다.

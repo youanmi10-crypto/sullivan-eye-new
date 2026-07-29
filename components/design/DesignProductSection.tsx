@@ -34,7 +34,7 @@ export default function DesignProductSection() {
       ref={sectionRef}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true, amount: 0.1 }}
+      viewport={{ once: true, amount: 0 }}
       transition={{ duration: 1.0, ease: "easeOut" }}
       className="snap-section relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-[#0A0A0A] px-6 py-40 sm:py-56 max-[768px]:h-auto max-[768px]:min-h-svh"
     >
@@ -51,7 +51,7 @@ export default function DesignProductSection() {
           variants={sectionVariants}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0 }}
           className="w-full max-w-3xl will-change-transform"
         >
           <DesignProductPlaceholder />

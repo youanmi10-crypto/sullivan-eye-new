@@ -52,9 +52,9 @@ export default function HeroText() {
           letterSpacing: ["0.35em", "0.55em", "0.35em"],
         }}
         transition={{
-          opacity: { duration: 0.8, ease: EASE, delay: 1.0 },
-          y: { duration: 0.8, ease: EASE, delay: 1.0 },
-          letterSpacing: { duration: 2.4, ease: "easeInOut", delay: 1.4 },
+          opacity: { duration: 0.8, ease: EASE, delay: 0.2 },
+          y: { duration: 0.8, ease: EASE, delay: 0.2 },
+          letterSpacing: { duration: 2.4, ease: "easeInOut", delay: 0.2 },
         }}
       >
         SEE BEYOND

@@ -25,18 +25,20 @@ export default function HeroSection() {
       <motion.h1
         initial={{ opacity: 1 }}
         animate={{ opacity: [0, 1] }}
-        transition={{ duration: 1.2, delay: 0.5 }}
-        style={{ letterSpacing: "0.1em" }}
-        className="mt-[209px] text-center text-6xl font-semibold leading-tight tracking-tight text-white sm:text-7xl md:text-8xl max-[768px]:mt-[120px] max-[768px]:text-[40px] max-[768px]:leading-[1.15]"
+        transition={{ duration: 1.2, delay: 0.2 }}
+        style={{ letterSpacing: "0.02em" }}
+        className="mt-[209px] text-center text-7xl font-semibold leading-tight tracking-tight text-white sm:text-8xl md:text-9xl max-[768px]:mt-[120px] max-[768px]:text-[44px] max-[768px]:leading-[1.15]"
       >
-        SULLIVAN&nbsp;EYE
+        SULLIVAN
+        <br />
+        EYE
       </motion.h1>
 
       {/* SEE BEYOND */}
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.8 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
         style={{ letterSpacing: "0.5em" }}
         className="mt-6 text-center text-xs uppercase tracking-[0.5em] text-neutral-400 sm:text-sm"
       >
@@ -60,7 +62,7 @@ export default function HeroSection() {
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
           className="relative z-10"
         >
           <motion.div style={{ scale, opacity }}>

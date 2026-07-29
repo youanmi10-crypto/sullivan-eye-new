@@ -49,8 +49,8 @@ export default function ExperienceImagePlaceholder() {
         onMouseLeave={handleMouseLeave}
         initial={{ opacity: 0, x: 60, scale: 0.98 }}
         whileInView={{ opacity: 1, x: 0, scale: 1 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.6 }}
+        viewport={{ once: true, amount: 0 }}
+        transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
         style={{ rotateY, y: hoverY, transformStyle: "preserve-3d" }}
         className="relative h-full w-full overflow-hidden bg-gradient-to-b from-white/[0.05] to-white/[0.015] will-change-transform"
       >

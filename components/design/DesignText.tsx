@@ -29,7 +29,7 @@ export default function DesignText() {
       variants={container}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.4 }}
+      viewport={{ once: true, amount: 0 }}
       className="flex w-full flex-col items-center"
     >
       {/* Badge — 좌측 상단 배치 */}

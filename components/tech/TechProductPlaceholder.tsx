@@ -27,7 +27,7 @@ export default function TechProductPlaceholder() {
       <motion.div
         initial={{ opacity: 0, y: 120, scale: 0.95 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0 }}
         transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
         className="relative z-10 aspect-[3/2] w-full will-change-transform"
       >

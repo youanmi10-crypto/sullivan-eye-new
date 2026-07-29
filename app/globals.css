@@ -12,22 +12,14 @@ body {
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* ── 1~4번 섹션 스크롤 스냅 (문서 레벨, proximity) ── */
-html {
-  scroll-snap-type: y proximity;
-  scroll-behavior: smooth;
-}
-
-/* 1~4번 메인 섹션만 스냅 대상. 5번 이후는 클래스가 없어 자유 스크롤 */
+/* 1~4번 메인 섹션 높이 기준 (스크롤 스냅은 제거됨) */
 .snap-section {
   min-height: 100vh;
-  scroll-snap-align: start;
 }
 
-/* 모바일: 스크롤 스냅 해제 → 일반 세로 스크롤 */
+/* 모바일: 일반 세로 스크롤 (스냅 없음) */
 @media (max-width: 768px) {
   html {
-    scroll-snap-type: none;
     scroll-behavior: auto;
   }
 
@@ -35,7 +27,6 @@ html {
   .snap-section {
     min-height: 100svh;
     height: auto;
-    scroll-snap-align: none;
   }
 
   /* 5) 모바일 좌우 여백 통일 (기본 20px) — 섹션/푸터에만 적용(중첩 방지) */
@@ -64,7 +55,6 @@ html {
   }
 
   /* 11) iPhone Safari 주소창 대응: 100vh → 100svh 우선 */
-  /* (컴포넌트의 min-h-screen/100vh 고정은 위 .snap-section 에서 svh로 오버라이드 됨) */
   .min-h-screen {
     min-height: 100svh;
   }
@@ -77,10 +67,9 @@ html {
   }
 }
 
-/* 모션 줄이기 선호 사용자: 스냅/부드러운 스크롤 해제 */
+/* 모션 줄이기 선호 사용자: 부드러운 스크롤 해제 */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-    scroll-snap-type: none;
   }
 }

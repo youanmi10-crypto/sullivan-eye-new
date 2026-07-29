@@ -19,7 +19,7 @@ export default function TechFeatures() {
           key={title}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0 }}
           transition={{ duration: 0.7, ease: EASE, delay: i * 0.15 }}
           className={
             "group flex flex-1 flex-col items-center gap-4 px-6 text-center will-change-transform" +

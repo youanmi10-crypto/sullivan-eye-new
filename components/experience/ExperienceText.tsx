@@ -32,7 +32,7 @@ export default function ExperienceText() {
       variants={container}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true, amount: 0 }}
       className="flex w-full flex-col items-start"
     >
       {/* Section Title */}
@@ -100,11 +100,11 @@ export default function ExperienceText() {
           y: 0,
           letterSpacing: ["0.15em", "0.3em", "0.15em"],
         }}
-        viewport={{ once: true, amount: 0.8 }}
+        viewport={{ once: true, amount: 0 }}
         transition={{
-          opacity: { duration: 0.8, ease: EASE, delay: 1.5 },
-          y: { duration: 0.8, ease: EASE, delay: 1.5 },
-          letterSpacing: { duration: 2.4, ease: "easeInOut", delay: 1.9 },
+          opacity: { duration: 0.8, ease: EASE, delay: 0.2 },
+          y: { duration: 0.8, ease: EASE, delay: 0.2 },
+          letterSpacing: { duration: 2.4, ease: "easeInOut", delay: 0.2 },
         }}
         className="mt-16 text-sm font-medium text-white sm:text-base max-[768px]:text-[14px]"
       >

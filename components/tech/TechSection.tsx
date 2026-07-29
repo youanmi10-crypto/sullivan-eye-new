@@ -31,7 +31,7 @@ export default function TechSection() {
       ref={sectionRef}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true, amount: 0.1 }}
+      viewport={{ once: true, amount: 0 }}
       transition={{ duration: 1.0, ease: "easeOut" }}
       className="relative min-h-[150vh] w-full overflow-hidden bg-[#0A0A0A] px-6 py-40 sm:py-56"
     >

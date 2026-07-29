@@ -45,7 +45,7 @@ export default function StatCard({ icon: Icon, label, segments, index }) {
               <span
                 key={i}
                 className={
-                  'font-light tabular-nums ' +
+                  'font-medium tabular-nums ' +
                   (seg.size === 'xl'
                     ? 'text-5xl sm:text-6xl'
                     : seg.size === 'lg'
@@ -66,7 +66,7 @@ export default function StatCard({ icon: Icon, label, segments, index }) {
             <span
               key={i}
               className={
-                'font-light ' +
+                'font-medium ' +
                 (seg.size === 'sm'
                   ? 'ml-1.5 text-sm text-white/70 sm:text-base'
                   : 'ml-1 text-lg text-white/85 sm:text-xl')

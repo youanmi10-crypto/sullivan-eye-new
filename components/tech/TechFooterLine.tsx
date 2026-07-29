@@ -7,7 +7,7 @@ export default function TechFooterLine() {
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true, amount: 0.8 }}
+      viewport={{ once: true, amount: 0 }}
       transition={{ duration: 1.0, ease: "easeOut", delay: 0.2 }}
       className="flex items-center justify-center gap-6 sm:gap-10"
     >

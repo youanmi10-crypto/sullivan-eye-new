@@ -13,8 +13,8 @@ export default function AIInterface() {
       aria-hidden
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 2.0, ease: "easeOut", delay: 0.4 }}
+      viewport={{ once: true, amount: 0 }}
+      transition={{ duration: 2.0, ease: "easeOut", delay: 0.2 }}
       className="pointer-events-none absolute inset-[-18%] z-0"
     >
       <svg

@@ -28,7 +28,7 @@ export default function ShowcaseSection() {
     <motion.section
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true, amount: 0.05 }}
+      viewport={{ once: true, amount: 0 }}
       transition={{ duration: 1.0, ease: EASE }}
       className="snap-section relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-black px-6 py-32 sm:py-48 max-[768px]:h-auto max-[768px]:min-h-svh"
     >
@@ -37,8 +37,8 @@ export default function ShowcaseSection() {
         <motion.h2
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.9, ease: EASE, delay: 0.4 }}
+          viewport={{ once: true, amount: 0 }}
+          transition={{ duration: 0.9, ease: EASE, delay: 0.2 }}
           className="text-4xl font-bold leading-tight text-white sm:text-5xl max-[768px]:text-[30px] max-[768px]:leading-snug"
         >
           {HEADLINE.map((line, i) => (
@@ -46,8 +46,8 @@ export default function ShowcaseSection() {
               key={line}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.8, ease: EASE, delay: 0.5 + i * 0.18 }}
+              viewport={{ once: true, amount: 0 }}
+              transition={{ duration: 0.8, ease: EASE, delay: 0.2 + i * 0.18 }}
               className="block"
             >
               {line}
@@ -59,8 +59,8 @@ export default function ShowcaseSection() {
         <motion.div
           initial={{ opacity: 0, y: 40, filter: "blur(20px)", scale: 0.96 }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)", scale: 1 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 1.3, ease: EASE, delay: 0.4 }}
+          viewport={{ once: true, amount: 0 }}
+          transition={{ duration: 1.3, ease: EASE, delay: 0.2 }}
           className="mt-[536px] w-full max-w-3xl will-change-transform max-[768px]:mt-[180px] max-[768px]:max-w-[300px]"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -79,7 +79,7 @@ export default function ShowcaseSection() {
               key={line}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
+              viewport={{ once: true, amount: 0 }}
               transition={{ duration: 0.8, ease: EASE, delay: 0.3 + i * 0.1 }}
               className="text-4xl leading-relaxed text-neutral-400 max-[768px]:text-[15px]"
             >
@@ -95,8 +95,8 @@ export default function ShowcaseSection() {
               key={line}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.6 }}
-              transition={{ duration: 0.8, ease: EASE, delay: 1.7 + i * 0.15 }}
+              viewport={{ once: true, amount: 0 }}
+              transition={{ duration: 0.8, ease: EASE, delay: 0.2 + i * 0.15 }}
               className="text-4xl font-semibold leading-[1.4] text-white max-[768px]:text-[15px] max-[768px]:font-medium"
             >
               {line}

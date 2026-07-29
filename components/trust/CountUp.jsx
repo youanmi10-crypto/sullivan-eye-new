@@ -14,7 +14,7 @@ const easeOutExpo = (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t))
  */
 export default function CountUp({ end, duration = 1.8, format }) {
   const ref = useRef(null)
-  const inView = useInView(ref, { once: true, amount: 0.6 })
+  const inView = useInView(ref, { once: true, amount: 0 })
   const [value, setValue] = useState(0)
 
   useEffect(() => {
