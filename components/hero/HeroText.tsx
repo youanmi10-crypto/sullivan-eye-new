@@ -23,13 +23,6 @@ const fadeUp: Variants = {
   },
 };
 
-const BODY_LINES = [
-  "세상을 읽는 새로운 눈",
-  "AI가 보는 것을 넘어 당신의 시선이 됩니다.",
-  "정보를 읽고 주변을 탐색하는 웨어러블 AI",
-  "더 자유롭게, 더 안전하게, 더 독립적으로",
-];
-
 export default function HeroText() {
   return (
     <motion.div
@@ -41,27 +34,16 @@ export default function HeroText() {
       {/* 메인 타이틀 */}
       <motion.h1
         variants={fadeUp}
+        style={{ letterSpacing: "0.3em" }}
         className="text-5xl font-semibold tracking-tight text-white sm:text-7xl md:text-8xl"
       >
         SULLIVAN&nbsp;EYE
       </motion.h1>
 
-      {/* 본문 */}
-      <div className="mt-6 flex flex-col items-center gap-1 sm:mt-8">
-        {BODY_LINES.map((line) => (
-          <motion.p
-            key={line}
-            variants={fadeUp}
-            className="text-base leading-loose text-[#E5E5E5] sm:text-lg md:text-xl"
-          >
-            {line}
-          </motion.p>
-        ))}
-      </div>
-
       {/* SEE BEYOND */}
       <motion.span
         variants={fadeUp}
+        style={{ letterSpacing: "0.35em" }}
         className="mt-6 text-xs uppercase text-neutral-400 sm:mt-8 sm:text-sm"
         initial={{ opacity: 0, y: 30, letterSpacing: "0.35em" }}
         animate={{

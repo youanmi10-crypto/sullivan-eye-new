@@ -67,12 +67,13 @@ export default function ProductPlaceholder() {
         style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
         className="relative mx-auto h-[min(46vh,31rem)] w-full will-change-transform"
       >
-        {/* 제품 이미지 — 2배 확대, fill 문제 해결을 위해 img 태그 사용 */}
+      <div className="relative w-full" style={{ transformBox: 'fill-box', overflow: 'visible' }}>
         <img
           src="/images/glass3.png"
           alt="SULLIVAN EYE"
-          className="w-full h-auto object-contain scale-[1.5]"
+          className="w-full h-auto object-contain scale-[2]"
         />
+      </div>
       </motion.div>
     </div>
   );
