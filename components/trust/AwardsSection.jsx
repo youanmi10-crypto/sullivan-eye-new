@@ -119,6 +119,21 @@ export default function AwardsSection() {
       ref={ref}
       className="relative overflow-hidden bg-[#0A0A0A] px-6 py-28 sm:px-10 sm:py-36"
     >
+      {/* 미세 도트 그리드 배경 — 기술/정밀 느낌 (옵션 A) */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage:
+            'radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px)',
+          backgroundSize: '24px 24px',
+          WebkitMaskImage:
+            'linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.35) 60%, transparent 100%)',
+          maskImage:
+            'linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.35) 60%, transparent 100%)',
+        }}
+      />
+
       {/* 상단 중앙 Spotlight — CSS radial-gradient only */}
       <motion.div
         style={{ y: spotY }}

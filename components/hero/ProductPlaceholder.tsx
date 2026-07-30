@@ -69,7 +69,7 @@ export default function ProductPlaceholder() {
       >
       <div className="relative w-full" style={{ transformBox: 'fill-box', overflow: 'visible' }}>
         <img
-          src="/images/glass3.png"
+          src="/images/hero-new.png"
           alt="SULLIVAN EYE"
           className="w-full h-auto object-contain scale-[2]"
         />

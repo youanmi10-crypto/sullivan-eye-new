@@ -27,11 +27,9 @@ export default function HeroSection() {
         animate={{ opacity: [0, 1] }}
         transition={{ duration: 1.2, delay: 0.2 }}
         style={{ letterSpacing: "0.02em" }}
-        className="mt-[209px] text-center text-7xl font-semibold leading-tight tracking-tight text-white sm:text-8xl md:text-9xl max-[768px]:mt-[120px] max-[768px]:text-[44px] max-[768px]:leading-[1.15]"
+        className="mt-[209px] text-center text-7xl font-semibold leading-tight tracking-tight text-white sm:text-8xl md:text-9xl max-[768px]:mt-[120px] max-[768px]:text-[11vw] max-[768px]:leading-[1.15] max-[768px]:whitespace-nowrap"
       >
-        SULLIVAN
-        <br />
-        EYE
+        SULLIVAN EYE
       </motion.h1>
 
       {/* SEE BEYOND */}

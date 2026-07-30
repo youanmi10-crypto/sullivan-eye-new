@@ -18,7 +18,7 @@ export default function RootLayout({
           href="https://www.tuat.kr/"
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed right-[96px] top-5 z-50 cursor-pointer opacity-90 transition-opacity hover:opacity-100"
+          className="fixed right-[96px] top-5 z-50 cursor-pointer opacity-90 transition-opacity hover:opacity-100 max-[768px]:right-4"
           aria-label="투아트 바로가기"
         >
           <img

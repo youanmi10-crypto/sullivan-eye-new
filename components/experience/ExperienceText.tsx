@@ -6,17 +6,17 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 
 const container: Variants = {
   hidden: {},
-  show: { transition: { delayChildren: 0.1, staggerChildren: 0.15 } },
+  show: { transition: { delayChildren: 0.1, staggerChildren: 0.25 } },
 };
 
 const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: EASE } },
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { duration: 0.8, ease: EASE } },
 };
 
 const fadeUpSoft: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: EASE } },
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { duration: 0.8, ease: EASE } },
 };
 
 const MOMENTS = [
@@ -92,21 +92,10 @@ export default function ExperienceText() {
         사람의 가능성을 더 크게 만드는 것입니다.
       </motion.p>
 
-      {/* 하단 슬로건 — 가장 마지막, letter spacing breathing */}
+      {/* 하단 슬로건 — 페이드 인만 (순서 포함) */}
       <motion.span
-        initial={{ opacity: 0, y: 20, letterSpacing: "0.15em" }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-          letterSpacing: ["0.15em", "0.3em", "0.15em"],
-        }}
-        viewport={{ once: true, amount: 0 }}
-        transition={{
-          opacity: { duration: 0.8, ease: EASE, delay: 0.2 },
-          y: { duration: 0.8, ease: EASE, delay: 0.2 },
-          letterSpacing: { duration: 2.4, ease: "easeInOut", delay: 0.2 },
-        }}
-        className="mt-16 text-sm font-medium text-white sm:text-base max-[768px]:text-[14px]"
+        variants={fadeUpSoft}
+        className="mt-16 text-[28px] font-medium text-white sm:text-[32px] max-[768px]:text-[28px]"
       >
         Freedom Begins with Vision
       </motion.span>

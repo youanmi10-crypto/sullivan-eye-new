@@ -32,23 +32,6 @@ export default function DesignText() {
       viewport={{ once: true, amount: 0 }}
       className="flex w-full flex-col items-center"
     >
-      {/* Badge — 좌측 상단 배치 */}
-      <div className="w-full">
-        <motion.span
-          variants={{
-            hidden: { opacity: 0, scale: 0.9 },
-            show: {
-              opacity: 1,
-              scale: 1,
-              transition: { duration: 0.6, ease: EASE },
-            },
-          }}
-          className="inline-block rounded-full border border-white/40 px-4 py-1.5 text-[11px] tracking-[0.2em] text-white"
-        >
-          DESIGN
-        </motion.span>
-      </div>
-
       {/* 메인 타이틀 */}
       <motion.h2
         variants={fadeUp}

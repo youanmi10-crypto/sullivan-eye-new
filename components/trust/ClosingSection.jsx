@@ -80,31 +80,14 @@ export default function ClosingSection() {
       </motion.div>
 
       <div className="relative mx-auto flex w-full max-w-5xl flex-col items-center text-center">
-        {/* CLOSING */}
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0 }}
-          transition={{ duration: 1.0, ease: easeOut }}
-          className="text-[#F2F2F2]"
-          style={{
-            fontSize: 'clamp(1.1rem, 3vw, 1.75rem)',
-            letterSpacing: '0.4em',
-            fontWeight: 400,
-            paddingLeft: '0.4em',
-          }}
-        >
-          CLOSING
-        </motion.p>
-
         {/* 슬로건 */}
         <motion.p
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0 }}
           transition={{ duration: 1.0, ease: easeOut, delay: 0.2 }}
-          className="mt-16 font-medium leading-snug text-white sm:mt-20"
-          style={{ fontSize: 'clamp(1.75rem, 6vw, 3.25rem)' }}
+          className="mt-16 leading-snug text-white sm:mt-20"
+          style={{ fontSize: 'clamp(1.75rem, 6vw, 3.25rem)', fontWeight: 300, letterSpacing: '-0.02em' }}
         >
           세상을 보는 방식이 달라지면
           <br />
@@ -139,7 +122,20 @@ export default function ClosingSection() {
         </motion.p>
 
         {/* 제품 이미지 영역 (충분한 여백) */}
-        <div className="mt-32 sm:mt-40">
+        <div className="relative mt-32 sm:mt-40">
+          {/* 안경에서 퍼지는 동그란 골드 글로우 (옵션 B) */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+          >
+            <div
+              className="h-[520px] w-[520px] rounded-full sm:h-[680px] sm:w-[680px] max-[768px]:h-[360px] max-[768px]:w-[360px]"
+              style={{
+                background:
+                  'radial-gradient(circle at center, rgba(201,168,76,0.28) 0%, rgba(201,168,76,0.10) 35%, rgba(201,168,76,0) 70%)',
+              }}
+            />
+          </div>
           <motion.div
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
