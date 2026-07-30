@@ -42,7 +42,7 @@ const PARTNERS = [
 const PARTNER_LOGOS = [
   { src: '/images/partner-sk.png', alt: 'SK텔레콤', size: 'h-20 sm:h-24', mobileClass: '' },
   { src: '/images/partner-samsung.png', alt: '삼성전자', size: 'h-10 sm:h-12', mobileClass: 'max-[768px]:h-11 max-[768px]:translate-y-[-11.4px]' },
-  { src: '/images/partner-bgf.svg', alt: 'BGF Retail', size: 'h-7 sm:h-8', mobileClass: 'max-[768px]:h-[14px] max-[768px]:w-auto max-[768px]:max-w-[80px]' },
+  { src: '/images/partner-bgf.svg', alt: 'BGF Retail', size: 'h-7 sm:h-8', mobileClass: 'max-[768px]:!w-[112px] max-[768px]:!h-auto max-[768px]:max-w-none' },
   { src: '/images/partner-anti.png', alt: '국민권익위원회', size: 'h-20 sm:h-24', mobileClass: '' },
   { src: '/images/partner-kto.png', alt: '한국관광공사', size: 'h-20 sm:h-24', mobileClass: '' },
 ]
