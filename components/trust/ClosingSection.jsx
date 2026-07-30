@@ -86,8 +86,8 @@ export default function ClosingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0 }}
           transition={{ duration: 1.0, ease: easeOut, delay: 0.2 }}
-          className="mt-16 leading-snug text-white sm:mt-20"
-          style={{ fontSize: 'clamp(1.75rem, 6vw, 3.25rem)', fontWeight: 300, letterSpacing: '-0.02em' }}
+          className="mt-16 leading-relaxed text-white sm:mt-20 max-[768px]:leading-[1.55]"
+          style={{ fontSize: 'clamp(1.4rem, 4.5vw, 2.5rem)', fontWeight: 300, letterSpacing: '-0.02em' }}
         >
           세상을 보는 방식이 달라지면
           <br />

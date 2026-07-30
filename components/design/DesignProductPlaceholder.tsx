@@ -45,13 +45,12 @@ export default function DesignProductPlaceholder() {
             repeatType: "loop",
           }}
         >
-          {/* 제품 이미지 — 새 사진 (원래 크기, 아래로 1cm 이동) */}
+          {/* 제품 이미지 — 새 사진 (데스크톱만 오른쪽 0.6cm 이동, 모바일은 중앙) */}
           <Image
             src="/images/product-new.png"
             alt="SULLIVAN EYE"
             fill
-            className="object-contain"
-            style={{ transform: "translate(22.8px, 38px)" }}
+            className="object-contain translate-y-[38px] md:translate-x-[22.8px]"
           />
         </motion.div>
       </motion.div>
