@@ -40,11 +40,11 @@ const PARTNERS = [
 
 // 하단 파트너 로고 (실제 로고 이미지)
 const PARTNER_LOGOS = [
-  { src: '/images/partner-sk.png', alt: 'SK텔레콤', size: 'h-20 sm:h-24' },
-  { src: '/images/partner-samsung.png', alt: '삼성전자', size: 'h-10 sm:h-12', mobileScale: '1.1', mobileY: '-11.4px' },
-  { src: '/images/partner-bgf.svg', alt: 'BGF Retail', size: 'h-7 sm:h-8', mobileScale: '0.25' },
-  { src: '/images/partner-anti.png', alt: '국민권익위원회', size: 'h-20 sm:h-24' },
-  { src: '/images/partner-kto.png', alt: '한국관광공사', size: 'h-20 sm:h-24' },
+  { src: '/images/partner-sk.png', alt: 'SK텔레콤', size: 'h-20 sm:h-24', mobileClass: '' },
+  { src: '/images/partner-samsung.png', alt: '삼성전자', size: 'h-10 sm:h-12', mobileClass: 'max-[768px]:h-11 max-[768px]:translate-y-[-11.4px]' },
+  { src: '/images/partner-bgf.svg', alt: 'BGF Retail', size: 'h-7 sm:h-8', mobileClass: 'max-[768px]:h-[14px] max-[768px]:w-auto max-[768px]:max-w-[80px]' },
+  { src: '/images/partner-anti.png', alt: '국민권익위원회', size: 'h-20 sm:h-24', mobileClass: '' },
+  { src: '/images/partner-kto.png', alt: '한국관광공사', size: 'h-20 sm:h-24', mobileClass: '' },
 ]
 // TUAT 로고 (실제 로고 이미지)
 function TuatLogo() {
@@ -185,7 +185,7 @@ export default function PartnersSection() {
               <img
                 src={logo.src}
                 alt={logo.alt}
-                className={`${logo.size} w-auto max-w-[120px] select-none object-contain opacity-100 transition-all duration-300 hover:scale-[1.03] max-[768px]:max-w-[140px] max-[768px]:h-auto${logo.mobileScale ? ` max-[768px]:scale-[${logo.mobileScale}]` : ''}${logo.mobileY ? ` max-[768px]:translate-y-[${logo.mobileY}]` : ''}`}
+                className={`${logo.size} w-auto max-w-[120px] select-none object-contain opacity-100 transition-all duration-300 hover:scale-[1.03] max-[768px]:max-w-[140px] max-[768px]:h-auto ${logo.mobileClass}`}
                 draggable={false}
               />
             </motion.div>
