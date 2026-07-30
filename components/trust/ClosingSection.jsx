@@ -6,8 +6,8 @@ import { useRef, useState } from 'react'
 const easeOut = [0.16, 1, 0.3, 1]
 
 // ── 제품 이미지 에셋 연결 ──────────────────────────────
-// public/images/closing-product.png 사용
-const productImg = '/images/closing-product.png'
+// public/images/closing-product-new.png 사용 (새 제품 이미지)
+const productImg = '/images/closing-product-new.png'
 
 // 제품 대체 비주얼 (에셋 없을 때만 표시)
 function ProductFallback() {
