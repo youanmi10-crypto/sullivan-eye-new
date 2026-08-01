@@ -129,7 +129,7 @@ export default function TrustSection() {
           <div className="grid grid-cols-3 divide-x divide-white/55">
             <StatCard
               icon={Globe}
-              label="글로벌 서비스"
+              label="글로벌 서비스 국가 수"
               segments={[
                 { type: 'num', value: 'count', end: 200, size: 'xl' },
                 { type: 'text', text: '개국 이상', size: 'sm' },
