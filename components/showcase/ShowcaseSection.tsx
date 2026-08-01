@@ -89,7 +89,7 @@ export default function ShowcaseSection() {
         </div>
 
         {/* 이미지 아래: TAGLINE */}
-        <div className="mt-[496px] mb-[380px] flex flex-col items-center max-[768px]:mt-[120px] max-[768px]:mb-[180px]">
+        <div className="mt-[496px] mb-[380px] flex flex-col items-center max-[768px]:mt-[120px] max-[768px]:mb-[120px]">
           {TAGLINE.map((line, i) => (
             <motion.p
               key={line}

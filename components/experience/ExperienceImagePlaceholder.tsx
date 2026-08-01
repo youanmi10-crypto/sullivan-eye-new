@@ -68,7 +68,7 @@ export default function ExperienceImagePlaceholder() {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "linear-gradient(to right, #000000 0%, rgba(0,0,0,0.7) 25%, rgba(0,0,0,0.25) 55%, transparent 80%)",
+              "linear-gradient(to right, #000000 0%, rgba(0,0,0,0.7) 8%, rgba(0,0,0,0.25) 18%, transparent 26%)",
           }}
         />
       </motion.div>
