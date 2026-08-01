@@ -77,7 +77,7 @@ export default function ExperienceText() {
         variants={fadeUpSoft}
         className="mt-12 text-xl font-semibold leading-relaxed text-white sm:text-2xl max-[768px]:text-[17px]"
       >
-        설리번아이는 그 순간마다
+        설리번 아이는 그 순간마다
         <br />
         당신과 함께합니다.
       </motion.p>
