@@ -21,10 +21,10 @@ export default function Footer() {
       style={{ opacity: fade }}
       className={`border-t ${isLight ? 'border-black/10 bg-white' : 'border-white/10 bg-[#0A0A0A]'} px-6 py-16 text-center sm:px-10`}
     >
-      <p className={`text-sm font-light tracking-[0.3em] ${isLight ? 'text-black/50' : 'text-white/50'}`}>
+      <p className={`text-sm font-normal tracking-[0.3em] ${isLight ? 'text-black' : 'text-white/50'}`}>
         SULLIVAN EYE
       </p>
-      <p className={`mt-4 text-xs font-light ${isLight ? 'text-black/30' : 'text-white/30'}`}>
+      <p className={`mt-4 text-xs font-normal ${isLight ? 'text-black' : 'text-white/30'}`}>
         당신의 시선이 되는 AI
       </p>
     </motion.footer>

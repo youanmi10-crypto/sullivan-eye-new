@@ -49,7 +49,7 @@ function Divider({ text }) {
       className="flex items-center justify-center gap-5 py-6"
     >
       <span className={`h-px -ml-[188px] flex-1 max-w-[235px] ${line}`} />
-      <span className="text-sm font-bold tracking-[0.2em] text-white sm:text-base">
+      <span className={`text-sm font-bold tracking-[0.2em] ${isLight ? 'text-black' : 'text-white'} sm:text-base`}>
         {text}
       </span>
       <span className={`h-px -mr-[188px] flex-1 max-w-[235px] ${line}`} />
@@ -61,6 +61,8 @@ export default function TrustSection() {
   const isLight = useIsLightTheme()
   const rootBg = isLight ? 'bg-white' : 'bg-[#111111]'
   const rootText = isLight ? 'text-black' : 'text-white'
+  const titleColor = isLight ? 'text-black' : 'text-white'
+  const bodyColor = isLight ? 'text-black' : 'text-white/85'
   return (
     <div className={`font-sans ${rootText} ${rootBg}`}>
       {/* 상단 여백 */}
@@ -75,7 +77,7 @@ export default function TrustSection() {
         {/* HERO TITLE */}
         <motion.h1
           variants={heroTitle}
-          className="text-left font-bold tracking-[0.06em] text-white"
+          className={`text-left font-bold tracking-[0.06em] ${titleColor}`}
           style={{ fontSize: 'clamp(4rem, 14vw, 9rem)', lineHeight: 0.95 }}
         >
           TRUST
@@ -84,7 +86,7 @@ export default function TrustSection() {
         {/* SUBTITLE */}
         <motion.p
           variants={heroSub}
-          className="mt-6 text-left text-4xl font-extrabold text-white sm:mt-8 sm:text-5xl"
+          className={`mt-6 text-left text-4xl font-extrabold ${titleColor} sm:mt-8 sm:text-5xl`}
         >
           기술보다 중요한 것은 신뢰
         </motion.p>
@@ -93,19 +95,19 @@ export default function TrustSection() {
         <div className="mt-10 max-w-2xl space-y-3 sm:mt-12">
           <motion.p
             variants={bodyLine}
-            className="text-left text-base leading-relaxed text-white/85 sm:text-lg"
+            className={`text-left text-base leading-relaxed ${bodyColor} sm:text-lg`}
           >
             수많은 연구와 AI 기술이 만든 결과
           </motion.p>
           <motion.p
             variants={bodyLine}
-            className="text-left text-base leading-relaxed text-white/85 sm:text-lg"
+            className={`text-left text-base leading-relaxed ${bodyColor} sm:text-lg`}
           >
             그러나 우리가 만드는 것은 기술이 아닙니다.
           </motion.p>
           <motion.p
             variants={bodyLine}
-            className="text-left text-base leading-relaxed text-white/85 sm:text-lg"
+            className={`text-left text-base leading-relaxed ${bodyColor} sm:text-lg`}
           >
             일상을 위한 새로운 가능성입니다.
           </motion.p>

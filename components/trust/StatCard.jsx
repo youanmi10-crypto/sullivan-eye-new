@@ -24,8 +24,8 @@ const iconVariants = {
 
 export default function StatCard({ icon: Icon, label, segments, index }) {
   const isLight = useIsLightTheme()
-  const iconColor = isLight ? 'text-black/90' : 'text-white/90'
-  const labelColor = isLight ? 'text-black/55' : 'text-white/55'
+  const iconColor = isLight ? 'text-black' : 'text-white/90'
+  const labelColor = isLight ? 'text-black' : 'text-white/55'
   const numColor = isLight ? 'text-black' : 'text-white'
   return (
     <motion.div
@@ -73,8 +73,8 @@ export default function StatCard({ icon: Icon, label, segments, index }) {
               className={
                 'font-medium ' +
                 (seg.size === 'sm'
-                  ? `ml-1.5 text-sm ${isLight ? 'text-black/70' : 'text-white/70'} sm:text-base`
-                  : `ml-1 text-lg ${isLight ? 'text-black/85' : 'text-white/85'} sm:text-xl`)
+                  ? `ml-1.5 text-sm ${isLight ? 'text-black' : 'text-white/70'} sm:text-base`
+                  : `ml-1 text-lg ${isLight ? 'text-black' : 'text-white/85'} sm:text-xl`)
               }
             >
               {seg.text}

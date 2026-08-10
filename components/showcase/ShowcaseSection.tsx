@@ -1,6 +1,7 @@
-"use client";
+"use use client";
 
 import { motion } from "framer-motion";
+import { useIsLightTheme } from "@/components/useIsLightTheme";
 
 /**
  * 1페이지(Hero) 바로 다음에 오는 프리미엄 제품 소개 페이지.
@@ -24,13 +25,18 @@ const SUBTEXT = [
 const TAGLINE = ["더 자유롭게,", "더 안전하게,", "더 독립적으로"];
 
 export default function ShowcaseSection() {
+  const isLight = useIsLightTheme();
+  const titleColor = isLight ? "text-black" : "text-white";
+  const subColor = isLight ? "text-black" : "text-neutral-400";
+  const tagColor = isLight ? "text-black" : "text-white";
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0 }}
       transition={{ duration: 1.0, ease: EASE }}
-      className="snap-section relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-black px-6 py-32 sm:py-48 max-[768px]:h-auto max-[768px]:min-h-svh"
+      className={`snap-section relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden ${isLight ? 'bg-white' : 'bg-black'} px-6 py-32 sm:py-48 max-[768px]:h-auto max-[768px]:min-h-svh`}
     >
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center text-center">
         {/* HEADLINE — 순차 등장 (가운데 정렬) */}
@@ -39,7 +45,7 @@ export default function ShowcaseSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0 }}
           transition={{ duration: 0.9, ease: EASE, delay: 0.2 }}
-          className="text-4xl font-bold leading-tight text-white sm:text-5xl max-[768px]:text-[30px] max-[768px]:leading-snug"
+          className={`text-4xl font-bold leading-tight ${titleColor} sm:text-5xl max-[768px]:text-[30px] max-[768px]:leading-snug`}
         >
           {HEADLINE.map((line, i) => (
             <motion.span
@@ -81,7 +87,7 @@ export default function ShowcaseSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0 }}
               transition={{ duration: 0.8, ease: EASE, delay: 0.3 + i * 0.1 }}
-              className="text-4xl leading-relaxed text-neutral-400 max-[768px]:text-[15px]"
+              className={`text-4xl leading-relaxed ${subColor} max-[768px]:text-[15px]`}
             >
               {line}
             </motion.p>
@@ -97,7 +103,7 @@ export default function ShowcaseSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0 }}
               transition={{ duration: 0.8, ease: EASE, delay: 0.2 + i * 0.15 }}
-              className="text-4xl font-semibold leading-[1.4] text-white max-[768px]:text-[15px] max-[768px]:font-medium"
+              className={`text-4xl font-semibold leading-[1.4] ${tagColor} max-[768px]:text-[15px] max-[768px]:font-medium`}
             >
               {line}
             </motion.p>

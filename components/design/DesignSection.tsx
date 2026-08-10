@@ -4,8 +4,10 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import DesignText from "./DesignText";
 import Spotlight from "./Spotlight";
+import { useIsLightTheme } from "@/components/useIsLightTheme";
 
 export default function DesignSection() {
+  const isLight = useIsLightTheme();
   const sectionRef = useRef<HTMLElement>(null);
 
   // 섹션 종료 시 페이드 아웃
@@ -23,7 +25,7 @@ export default function DesignSection() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0 }}
       transition={{ duration: 1.0, ease: "easeOut" }}
-      className="snap-section relative min-h-screen w-full overflow-hidden bg-[#111111] px-6 py-40 sm:py-56 max-[768px]:h-auto max-[768px]:min-h-svh"
+      className={`snap-section relative min-h-screen w-full overflow-hidden ${isLight ? 'bg-white' : 'bg-[#111111]'} px-6 py-40 sm:py-56 max-[768px]:h-auto max-[768px]:min-h-svh`}
     >
       {/* 상단 중앙에서 떨어지는 원뿔형 Spotlight */}
       <Spotlight />
@@ -40,7 +42,7 @@ export default function DesignSection() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0 }}
           transition={{ duration: 1.0, ease: "easeOut", delay: 0.3 }}
-          className="mt-[calc(8rem-113px)] text-xs tracking-[0.35em] text-neutral-500 sm:mt-[calc(10rem-113px)] sm:text-sm max-[768px]:mt-16 max-[768px]:text-[11px]"
+          className={`mt-[calc(8rem-113px)] text-xs tracking-[0.35em] ${isLight ? 'text-black' : 'text-neutral-500'} sm:mt-[calc(10rem-113px)] sm:text-sm max-[768px]:mt-16 max-[768px]:text-[11px]`}
         >
           Designed for Everyday.
         </motion.p>

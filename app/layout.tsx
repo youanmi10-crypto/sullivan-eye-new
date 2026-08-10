@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ThemeProvider } from "@/components/useIsLightTheme";
 
 export const metadata: Metadata = {
   title: "SULLIVAN EYE — 세상을 읽는 새로운 눈",
@@ -27,7 +28,7 @@ export default function RootLayout({
             className="h-16 w-auto sm:h-20"
           />
         </a>
-        {children}
+        <ThemeProvider theme="dark">{children}</ThemeProvider>
       </body>
     </html>
   );

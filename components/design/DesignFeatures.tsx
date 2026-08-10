@@ -2,6 +2,7 @@
 
 import { motion, type Variants } from "framer-motion";
 import { Ear, Gem, Sparkles } from "lucide-react";
+import { useIsLightTheme } from "@/components/useIsLightTheme";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -22,6 +23,15 @@ const FEATURES = [
 ];
 
 export default function DesignFeatures() {
+  const isLight = useIsLightTheme();
+  const iconColor = isLight ? "text-black" : "text-neutral-300";
+  const iconHover = isLight ? "group-hover:text-black" : "group-hover:text-white";
+  const labelColor = isLight ? "text-black" : "text-neutral-300";
+  const labelHover = isLight ? "group-hover:text-black" : "group-hover:text-white";
+  const divider = isLight ? "border-black/10" : "border-white/10";
+  const lineColor = isLight ? "bg-black/30" : "bg-white/30";
+  const lineHover = isLight ? "group-hover:bg-black/60" : "group-hover:bg-white/60";
+
   return (
     <motion.div
       variants={{ show: { transition: { staggerChildren: 0.18 } } }}
@@ -35,7 +45,7 @@ export default function DesignFeatures() {
           className={
             "group flex flex-1 flex-col items-center gap-4 px-6 text-center will-change-transform " +
             (i > 0
-              ? "border-t border-white/10 pt-10 sm:border-t-0 sm:border-l sm:pt-0"
+              ? `border-t ${divider} pt-10 sm:border-t-0 sm:border-l sm:pt-0`
               : "")
           }
         >
@@ -47,16 +57,16 @@ export default function DesignFeatures() {
             className="flex flex-col items-center gap-4"
           >
             <Icon
-              className="h-6 w-6 text-neutral-300 transition-colors duration-300 group-hover:text-white"
+              className={`h-6 w-6 ${iconColor} transition-colors duration-300 ${iconHover}`}
               strokeWidth={1.25}
             />
-            <p className="text-sm leading-relaxed text-neutral-300 transition-colors duration-300 group-hover:text-white sm:text-base">
+            <p className={`text-sm leading-relaxed ${labelColor} transition-colors duration-300 ${labelHover} sm:text-base`}>
               {label}
             </p>
           </motion.div>
 
           {/* Hover 시 좌우로 자연스럽게 길어지는 짧은 라인 */}
-          <span className="mt-1 block h-px w-6 bg-white/30 transition-all duration-300 ease-out group-hover:w-12 group-hover:bg-white/60" />
+          <span className={`mt-1 block h-px w-6 ${lineColor} transition-all duration-300 ease-out group-hover:w-12 ${lineHover}`} />
         </motion.div>
       ))}
     </motion.div>

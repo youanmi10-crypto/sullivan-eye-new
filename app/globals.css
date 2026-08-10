@@ -97,27 +97,25 @@ body {
   background-color: #ffffff !important;
 }
 
-/* Tailwind 텍스트 색 클래스 → 블랙 */
+/* Tailwind 텍스트 색 클래스 → 진한 블랙 (화이트 배경 가독성) */
 .light-theme .text-white {
   color: #000000 !important;
 }
-.light-theme .text-white\/50 {
-  color: rgba(0, 0, 0, 0.5) !important;
-}
-.light-theme .text-white\/30 {
-  color: rgba(0, 0, 0, 0.3) !important;
-}
-.light-theme .text-white\/40 {
-  color: rgba(0, 0, 0, 0.4) !important;
-}
-.light-theme .text-white\/55 {
-  color: rgba(0, 0, 0, 0.55) !important;
-}
-.light-theme .text-white\/70 {
-  color: rgba(0, 0, 0, 0.7) !important;
-}
+.light-theme .text-white\/30,
+.light-theme .text-white\/40,
+.light-theme .text-white\/50,
+.light-theme .text-white\/55,
+.light-theme .text-white\/60,
+.light-theme .text-white\/70,
+.light-theme .text-white\/85,
 .light-theme .text-white\/90 {
-  color: rgba(0, 0, 0, 0.9) !important;
+  color: #000000 !important;
+}
+.light-theme .text-neutral-200,
+.light-theme .text-neutral-300,
+.light-theme .text-neutral-400,
+.light-theme .text-neutral-500 {
+  color: #000000 !important;
 }
 
 /* 배경/보더 클래스 → 화이트/블랙 */
@@ -131,6 +129,9 @@ body {
   background-color: #ffffff !important;
 }
 .light-theme .bg-\[#111111\] {
+  background-color: #ffffff !important;
+}
+.light-theme .bg-\[#151515\] {
   background-color: #ffffff !important;
 }
 .light-theme .border-white\/10 {
@@ -148,12 +149,4 @@ body {
     rgba(0, 0, 0, 0.04),
     rgba(0, 0, 0, 0.01)
   ) !important;
-}
-
-/* 누락된 opacity variant 보강 */
-.light-theme .text-white\/60 {
-  color: rgba(0, 0, 0, 0.6) !important;
-}
-.light-theme .text-white\/85 {
-  color: rgba(0, 0, 0, 0.85) !important;
 }

@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform, type Variants } from "framer-motion";
 import DesignProductPlaceholder from "./DesignProductPlaceholder";
 import DesignFeatures from "./DesignFeatures";
 import ProductSpotlight from "./ProductSpotlight";
+import { useIsLightTheme } from "@/components/useIsLightTheme";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -19,6 +20,7 @@ const sectionVariants: Variants = {
 };
 
 export default function DesignProductSection() {
+  const isLight = useIsLightTheme();
   const sectionRef = useRef<HTMLElement>(null);
 
   // 섹션 종료 시 페이드 아웃
@@ -36,7 +38,7 @@ export default function DesignProductSection() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0 }}
       transition={{ duration: 1.0, ease: "easeOut" }}
-      className="snap-section relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-[#0A0A0A] px-6 py-40 sm:py-56 max-[768px]:h-auto max-[768px]:min-h-svh"
+      className={`snap-section relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden ${isLight ? 'bg-white' : 'bg-[#0A0A0A]'} px-6 py-40 sm:py-56 max-[768px]:h-auto max-[768px]:min-h-svh`}
     >
       {/* 안경을 향해 비춰지는 스포트라이트 — 콘텐츠 뒤에 깔림 */}
       <div className="absolute inset-0 z-0">

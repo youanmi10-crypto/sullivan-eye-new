@@ -86,10 +86,10 @@ function AwardItem({ year, award, desc, isLast }) {
         >
           {year}
         </p>
-        <h3 className="mb-3 text-xl font-extrabold text-white sm:text-2xl">
+        <h3 className={`mb-3 text-xl font-extrabold ${isLight ? 'text-black' : 'text-white'} sm:text-2xl`}>
           {award}
         </h3>
-        <p className="text-sm leading-relaxed text-white/70 sm:text-base">
+        <p className={`text-sm leading-relaxed ${isLight ? 'text-black' : 'text-white/70'} sm:text-base`}>
           {desc}
         </p>
       </div>
@@ -181,7 +181,7 @@ export default function AwardsSection() {
           className="mb-24 text-center sm:mb-32"
         >
           <h2
-            className="font-extrabold leading-[1.1] text-white"
+            className={`font-extrabold leading-[1.1] ${isLight ? 'text-black' : 'text-white'}`}
             style={{ fontSize: 'clamp(2.1rem, 8vw, 4.5rem)' }}
           >
             세계가 인정한

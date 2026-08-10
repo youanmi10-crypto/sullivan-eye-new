@@ -6,8 +6,10 @@ import TechText from "./TechText";
 import TechProductPlaceholder from "./TechProductPlaceholder";
 import TechFeatures from "./TechFeatures";
 import TechFooterLine from "./TechFooterLine";
+import { useIsLightTheme } from "@/components/useIsLightTheme";
 
 export default function TechSection() {
+  const isLight = useIsLightTheme();
   const sectionRef = useRef<HTMLElement>(null);
 
   // 섹션 통과 진행도 — 좌/우 컬럼에 미세한 속도 차이 (depth)
@@ -33,15 +35,16 @@ export default function TechSection() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0 }}
       transition={{ duration: 1.0, ease: "easeOut" }}
-      className="relative min-h-[150vh] w-full overflow-hidden bg-[#0A0A0A] px-6 py-40 sm:py-56"
+      className={`relative min-h-[150vh] w-full overflow-hidden ${isLight ? 'bg-white' : 'bg-[#0A0A0A]'} px-6 py-40 sm:py-56`}
     >
       {/* 오른쪽 상단에서 내려오는 은은한 Spotlight */}
       <div
         aria-hidden
         className="pointer-events-none absolute -top-[20%] right-[-25%] h-[90vh] w-[90vw] rounded-full opacity-[0.07] blur-[100px]"
         style={{
-          background:
-            "radial-gradient(ellipse at top right, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.25) 40%, transparent 70%)",
+          background: isLight
+            ? "radial-gradient(ellipse at top right, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.03) 40%, transparent 70%)"
+            : "radial-gradient(ellipse at top right, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.25) 40%, transparent 70%)",
         }}
       />
 

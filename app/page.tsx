@@ -1,3 +1,5 @@
+"use client";
+
 import HeroSection from "@/components/hero/HeroSection";
 import ShowcaseSection from "@/components/showcase/ShowcaseSection";
 import Page2 from "@/components/pages/Page2";
@@ -10,27 +12,30 @@ import {
   AmbientOverlay,
   ContinuousBeam,
 } from "@/components/lighting/GlobalLighting";
+import { ThemeProvider } from "@/components/useIsLightTheme";
 
 export default function Home() {
   return (
-    <main className="relative bg-black">
-      {/* Global Lighting System */}
-      <AmbientOverlay />
-      <ContinuousBeam />
+    <ThemeProvider theme="dark">
+      <main className="relative bg-black">
+        {/* Global Lighting System */}
+        <AmbientOverlay />
+        <ContinuousBeam />
 
-      <div className="relative z-10">
-        {/* 1~4번 섹션: .snap-section (문서 레벨 proximity 스냅 대상) */}
-        <HeroSection />
-        <ShowcaseSection />
-        <Page2 />
-        <DesignSection />
-        <DesignProductSection />
+        <div className="relative z-10">
+          {/* 1~4번 섹션: .snap-section (문서 레벨 proximity 스냅 대상) */}
+          <HeroSection />
+          <ShowcaseSection />
+          <Page2 />
+          <DesignSection />
+          <DesignProductSection />
 
-        {/* 5번 이후: 스냅 없음 → 일반 자유 스크롤 */}
-        <TechSection />
-        <ExperienceSection />
-        <TrustSection />
-      </div>
-    </main>
+          {/* 5번 이후: 스냅 없음 → 일반 자유 스크롤 */}
+          <TechSection />
+          <ExperienceSection />
+          <TrustSection />
+        </div>
+      </main>
+    </ThemeProvider>
   );
 }

@@ -44,7 +44,7 @@ export default function TechText() {
             transition: { duration: 1.0, ease: EASE },
           },
         }}
-        className="text-xs font-semibold text-white sm:text-sm"
+        className={`text-xs font-semibold ${isLight ? 'text-black' : 'text-white'} sm:text-sm`}
       >
         CORE TECHNOLOGY
       </motion.span>
@@ -52,7 +52,7 @@ export default function TechText() {
       {/* 메인 타이틀 */}
       <motion.h2
         variants={fadeUp}
-        className="mt-8 text-4xl font-bold leading-[1.2] text-white sm:text-5xl md:text-6xl max-[768px]:mt-6 max-[768px]:text-[30px] max-[768px]:leading-snug"
+        className={`mt-8 text-4xl font-bold leading-[1.2] ${isLight ? 'text-black' : 'text-white'} sm:text-5xl md:text-6xl max-[768px]:mt-6 max-[768px]:text-[30px] max-[768px]:leading-snug`}
       >
         AI가
         <br />
@@ -65,7 +65,7 @@ export default function TechText() {
           <motion.p
             key={line}
             variants={fadeUp}
-            className="text-base leading-loose text-neutral-300 sm:text-lg max-[768px]:text-[15px] max-[768px]:leading-relaxed"
+            className={`text-base leading-loose ${isLight ? 'text-black' : 'text-neutral-300'} sm:text-lg max-[768px]:text-[15px] max-[768px]:leading-relaxed`}
           >
             {line}
           </motion.p>
@@ -78,7 +78,7 @@ export default function TechText() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0 }}
         transition={{ duration: 0.9, ease: EASE, delay: 0.2 }}
-        className="mt-12 text-base leading-loose text-neutral-400 sm:text-lg max-[768px]:mt-8 max-[768px]:text-[15px] max-[768px]:leading-relaxed"
+        className={`mt-12 text-base leading-loose ${isLight ? 'text-black' : 'text-neutral-400'} sm:text-lg max-[768px]:mt-8 max-[768px]:text-[15px] max-[768px]:leading-relaxed`}
       >
         <p>복잡한 기술은 보이지 않습니다.</p>
         <p className="mt-2">

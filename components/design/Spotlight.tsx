@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useIsLightTheme } from "@/components/useIsLightTheme";
 
 /**
  * 상단 중앙에서 아래로 떨어지는 원뿔형 Spotlight.
@@ -8,6 +9,11 @@ import { motion } from "framer-motion";
  * 아주 천천히 숨쉬듯 변합니다 (약 7초 주기).
  */
 export default function Spotlight() {
+  const isLight = useIsLightTheme();
+  const gradient = isLight
+    ? "conic-gradient(from 180deg at 50% 0%, transparent 40%, rgba(0,0,0,0.08) 50%, transparent 60%)"
+    : "conic-gradient(from 180deg at 50% 0%, transparent 40%, rgba(255,255,255,0.9) 50%, transparent 60%)";
+
   return (
     <motion.div
       aria-hidden
@@ -18,8 +24,7 @@ export default function Spotlight() {
       style={{
         width: "140vw",
         height: "120vh",
-        background:
-          "conic-gradient(from 180deg at 50% 0%, transparent 40%, rgba(255,255,255,0.9) 50%, transparent 60%)",
+        background: gradient,
         filter: "blur(80px)",
       }}
     >

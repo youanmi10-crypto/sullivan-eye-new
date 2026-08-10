@@ -4,8 +4,10 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import ExperienceText from "./ExperienceText";
 import ExperienceImagePlaceholder from "./ExperienceImagePlaceholder";
+import { useIsLightTheme } from "@/components/useIsLightTheme";
 
 export default function ExperienceSection() {
+  const isLight = useIsLightTheme();
   const sectionRef = useRef<HTMLElement>(null);
 
   // 스크롤 종료 시: 위로 이동 + 페이드 아웃
@@ -23,7 +25,7 @@ export default function ExperienceSection() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0 }}
       transition={{ duration: 1.0, ease: "easeOut" }}
-      className="relative min-h-[130vh] w-full overflow-hidden bg-black py-24 sm:py-32"
+      className={`relative min-h-[130vh] w-full overflow-hidden ${isLight ? 'bg-white' : 'bg-black'} py-24 sm:py-32`}
     >
       <motion.div
         style={{ y: contentY, opacity: contentOpacity }}

@@ -30,7 +30,7 @@ function ProductFallback() {
       {/* TUAT 로고 자리 (shimmer 타깃) */}
       <div
         id="product-logo"
-        className={`absolute bottom-10 left-1/2 -translate-x-1/2 text-xs tracking-[0.3em] ${isLight ? 'text-black/40' : 'text-white/40'}`}
+        className={`absolute bottom-10 left-1/2 -translate-x-1/2 text-xs tracking-[0.3em] ${isLight ? 'text-black' : 'text-white/40'}`}
       >
         TUAT
       </div>
@@ -53,7 +53,7 @@ export default function ClosingSection() {
   const fallbackShadow = isLight
     ? 'inset 0 1px 1px rgba(0,0,0,0.25), 0 30px 80px rgba(0,0,0,0.15)'
     : 'inset 0 1px 1px rgba(255,255,255,0.25), 0 30px 80px rgba(0,0,0,0.6)'
-  const logoColor = isLight ? 'text-black/40' : 'text-white/40'
+  const logoColor = isLight ? 'text-black' : 'text-white/40'
   const shimmerColor = isLight
     ? 'linear-gradient(105deg, transparent, rgba(0,0,0,0.3), transparent)'
     : 'linear-gradient(105deg, transparent, rgba(255,255,255,0.5), transparent)'
@@ -106,7 +106,7 @@ export default function ClosingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0 }}
           transition={{ duration: 1.0, ease: easeOut, delay: 0.2 }}
-          className="mt-16 leading-relaxed text-white sm:mt-20 max-[768px]:leading-[1.55]"
+          className={`mt-16 leading-relaxed ${isLight ? 'text-black' : 'text-white'} sm:mt-20 max-[768px]:leading-[1.55]`}
           style={{ fontSize: 'clamp(1.4rem, 4.5vw, 2.5rem)', fontWeight: 300, letterSpacing: '-0.02em' }}
         >
           세상을 보는 방식이 달라지면
@@ -120,7 +120,7 @@ export default function ClosingSection() {
           whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
           viewport={{ once: true, amount: 0 }}
           transition={{ duration: 1.3, ease: easeOut }}
-          className="mt-24 font-bold tracking-[0.04em] text-white sm:mt-28"
+          className={`mt-24 font-bold tracking-[0.04em] ${isLight ? 'text-black' : 'text-white'} sm:mt-28`}
           style={{
             fontSize: 'clamp(3.5rem, 13vw, 7.5rem)',
             lineHeight: 1,
@@ -135,7 +135,7 @@ export default function ClosingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0 }}
           transition={{ duration: 1.0, ease: easeOut, delay: 0.15 }}
-          className="mt-8 font-medium text-white/90"
+          className={`mt-8 font-medium ${isLight ? 'text-black' : 'text-white/90'}`}
           style={{ fontSize: 'clamp(1.6rem, 5vw, 3rem)' }}
         >
           당신의 시선이 되는 AI

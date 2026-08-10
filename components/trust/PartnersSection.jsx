@@ -152,7 +152,7 @@ export default function PartnersSection() {
                   {p.name}
                 </p>
                 <div
-                  className={`space-y-1 text-sm leading-[1.7] ${isLight ? 'text-black/90' : 'text-white/90'} sm:text-base max-[768px]:text-[15px]`}
+                  className={`space-y-1 text-sm leading-[1.7] ${isLight ? 'text-black' : 'text-white/90'} sm:text-base max-[768px]:text-[15px]`}
                 >
                   {p.desc.map((line, j) => (
                     <p key={j}>{line}</p>

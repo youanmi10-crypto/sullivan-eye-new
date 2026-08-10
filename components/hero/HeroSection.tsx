@@ -2,8 +2,10 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { useIsLightTheme } from "@/components/useIsLightTheme";
 
 export default function HeroSection() {
+  const isLight = useIsLightTheme();
   const sectionRef = useRef<HTMLElement>(null);
 
   // 스크롤 진행도(히어로 섹션이 뷰포트를 빠져나갈 때까지 0→1)
@@ -16,10 +18,16 @@ export default function HeroSection() {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.8]);
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1, 0]);
 
+  const titleColor = isLight ? "text-black" : "text-white";
+  const subColor = isLight ? "text-black" : "text-neutral-400";
+  const glowColor = isLight
+    ? "radial-gradient(circle at center, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.03) 35%, transparent 70%)"
+    : "radial-gradient(circle at center, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 35%, transparent 70%)";
+
   return (
     <section
       ref={sectionRef}
-      className="snap-section relative flex min-h-screen w-full flex-col items-center bg-[#0A0A0A] px-6 max-[768px]:h-auto max-[768px]:min-h-svh"
+      className={`snap-section relative flex min-h-screen w-full flex-col items-center ${isLight ? 'bg-white' : 'bg-[#0A0A0A]'} px-6 max-[768px]:h-auto max-[768px]:min-h-svh`}
     >
       {/* Title — 자간 좁힘 */}
       <motion.h1
@@ -27,7 +35,7 @@ export default function HeroSection() {
         animate={{ opacity: [0, 1] }}
         transition={{ duration: 1.2, delay: 0.2 }}
         style={{ letterSpacing: "0.02em" }}
-        className="mt-[209px] text-center text-7xl font-semibold leading-tight tracking-tight text-white sm:text-8xl md:text-9xl max-[768px]:mt-[120px] max-[768px]:text-[11vw] max-[768px]:leading-[1.15] max-[768px]:whitespace-nowrap"
+        className={`mt-[209px] text-center text-7xl font-semibold leading-tight tracking-tight ${titleColor} sm:text-8xl md:text-9xl max-[768px]:mt-[120px] max-[768px]:text-[11vw] max-[768px]:leading-[1.15] max-[768px]:whitespace-nowrap`}
       >
         SULLIVAN EYE
       </motion.h1>
@@ -38,7 +46,7 @@ export default function HeroSection() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
         style={{ letterSpacing: "0.5em" }}
-        className="mt-6 text-center text-xs uppercase tracking-[0.5em] text-neutral-400 sm:text-sm"
+        className={`mt-6 text-center text-xs uppercase tracking-[0.5em] ${subColor} sm:text-sm`}
       >
         SEE BEYOND
       </motion.p>
@@ -52,8 +60,7 @@ export default function HeroSection() {
           style={{
             width: "130%",
             aspectRatio: "1 / 1",
-            background:
-              "radial-gradient(circle at center, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 35%, transparent 70%)",
+            background: glowColor,
             filter: "blur(40px)",
           }}
         />

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useIsLightTheme } from "@/components/useIsLightTheme";
 
 /**
  * 3페이지(Design-B) 안경 바로 위 배경에 비춰지는 스포트라이트.
@@ -10,6 +11,11 @@ import { motion } from "framer-motion";
  * 이미지 추가 시 public/images/spotlight.png 를 넣고 아래 주석 해제.
  */
 export default function ProductSpotlight() {
+  const isLight = useIsLightTheme();
+  const gradient = isLight
+    ? "conic-gradient(from 180deg at 50% 0%, transparent 43%, rgba(0,0,0,0.07) 50%, transparent 57%)"
+    : "conic-gradient(from 180deg at 50% 0%, transparent 43%, rgba(255,255,255,0.85) 50%, transparent 57%)";
+
   return (
     <motion.div
       aria-hidden
@@ -26,8 +32,7 @@ export default function ProductSpotlight() {
         animate={{ opacity: [0.92, 1, 0.92] }}
         transition={{ duration: 6, ease: "easeInOut", repeat: Infinity }}
         style={{
-          background:
-            "conic-gradient(from 180deg at 50% 0%, transparent 43%, rgba(255,255,255,0.85) 50%, transparent 57%)",
+          background: gradient,
           filter: "blur(2px)",
         }}
       />
