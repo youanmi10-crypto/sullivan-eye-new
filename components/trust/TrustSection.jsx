@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Globe, Download, Users } from 'lucide-react'
 import StatCard from './StatCard'
 import { formatKorean } from './CountUp'
 import AwardsSection from './AwardsSection'
@@ -9,6 +8,7 @@ import PartnersSection from './PartnersSection'
 import ClosingSection from './ClosingSection'
 import Footer from './Footer'
 import { useIsLightTheme } from '@/components/useIsLightTheme'
+import { GlobalIcon, DownloadIcon, UsersIcon } from './TrustIcons'
 
 // 부드러운 easeOutExpo 느낌의 커스텀 이징
 const easeOut = [0.16, 1, 0.3, 1]
@@ -136,7 +136,7 @@ export default function TrustSection() {
         >
           <div className={`grid grid-cols-3 divide-x ${isLight ? 'divide-black/55' : 'divide-white/55'}`}>
             <StatCard
-              icon={Globe}
+              icon={GlobalIcon}
               label="글로벌 서비스 국가 수"
               segments={[
                 { type: 'num', value: 'count', end: 200, size: 'xl' },
@@ -144,7 +144,7 @@ export default function TrustSection() {
               ]}
             />
             <StatCard
-              icon={Download}
+              icon={DownloadIcon}
               label="설리번 플러스 다운로드 수"
               segments={[
                 { type: 'num', value: 'count', end: 50, size: 'xl' },
@@ -153,7 +153,7 @@ export default function TrustSection() {
               ]}
             />
             <StatCard
-              icon={Users}
+              icon={UsersIcon}
               label="월별 이용자 수 (MAU)"
               segments={[
                 {
