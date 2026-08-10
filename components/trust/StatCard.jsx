@@ -22,7 +22,7 @@ const iconVariants = {
   },
 }
 
-export default function StatCard({ icon: Icon, label, segments, desc, image, imageOpacity }) {
+export default function StatCard({ icon: Icon, label, segments, desc, image, imageOpacity, imageRounded = '2xl' }) {
   const isLight = useIsLightTheme()
   const iconColor = isLight ? 'text-black' : 'text-white/90'
   const labelColor = isLight ? 'text-black' : 'text-white/55'
@@ -44,7 +44,7 @@ export default function StatCard({ icon: Icon, label, segments, desc, image, ima
           <img
             src={image}
             alt={label}
-            className={`h-auto w-full max-w-[220px] rounded-full object-contain sm:max-w-[260px] ${imageOpacity ? `opacity-${imageOpacity}` : ''}`}
+            className={`h-auto w-full max-w-[220px] ${imageRounded === 'full' ? 'rounded-full' : 'rounded-2xl'} object-contain sm:max-w-[260px] ${imageOpacity ? `opacity-${imageOpacity}` : ''}`}
           />
         ) : (
           <Icon size={52} strokeWidth={2.4} />
