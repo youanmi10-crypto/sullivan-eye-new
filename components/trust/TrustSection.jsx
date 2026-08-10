@@ -113,25 +113,19 @@ export default function TrustSection() {
 
       {/* 아래 부분 전체 — 본문 바로 아래 촘촘히 이어붙임 */}
       <div className="[display:flow-root]">
-        {/* DIVIDER */}
+        {/* DIVIDER + 통합 카드 박스 */}
         <motion.div
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0 }}
-          className="mx-auto mt-[269px] w-full max-w-5xl px-7 sm:px-10"
+          className="mx-auto mt-16 w-full max-w-5xl px-7 sm:mt-20 sm:px-10"
         >
           <Divider text="설리번 SW" />
-        </motion.div>
 
-        {/* CARDS */}
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0 }}
-          variants={cardsContainer}
-          className="mx-auto mt-8 w-full max-w-5xl px-4 pb-32 sm:px-10"
-        >
-          <div className="grid grid-cols-3">
+          <motion.div
+            variants={cardsContainer}
+            className={`mt-10 grid grid-cols-3 divide-x rounded-3xl border px-4 py-2 sm:py-4 ${isLight ? 'border-[#E2E2E5]' : 'border-white/15'}`}
+          >
             <StatCard
               icon={GlobalIcon}
               label="글로벌 서비스 국가 수"
@@ -163,7 +157,7 @@ export default function TrustSection() {
                 { type: 'text', text: '명 이상', size: 'sm' },
               ]}
             />
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* AWARDS TIMELINE SECTION */}
