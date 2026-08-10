@@ -32,12 +32,12 @@ export default function ExperienceSection() {
         className="relative grid min-h-screen w-full grid-cols-1 max-[768px]:grid-cols-1 lg:grid-cols-2 will-change-transform"
       >
         {/* 좌: 텍스트 */}
-        <div className="flex items-center px-6 py-24 sm:px-12 sm:py-40 lg:pl-[8vw] lg:pr-12">
+        <div className="relative z-10 flex items-center px-6 py-24 sm:px-12 sm:py-40 lg:pl-[8vw] lg:pr-12">
           <ExperienceText />
         </div>
 
         {/* 우: 이미지 Placeholder (전체 높이) */}
-        <div className="relative min-h-[60vh] lg:min-h-screen max-[768px]:min-h-[45vh] max-[768px]:overflow-hidden">
+        <div className="relative z-0 min-h-[60vh] lg:min-h-screen max-[768px]:min-h-[45vh] max-[768px]:overflow-hidden">
           <ExperienceImagePlaceholder />
         </div>
       </motion.div>
