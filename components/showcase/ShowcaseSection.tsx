@@ -36,7 +36,7 @@ export default function ShowcaseSection() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0 }}
       transition={{ duration: 1.0, ease: EASE }}
-      className={`snap-section relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden ${isLight ? 'bg-white' : 'bg-black'} px-6 py-32 sm:py-48 max-[768px]:h-auto max-[768px]:min-h-svh`}
+      className={`snap-section relative flex min-h-screen w-full flex-col items-center justify-start overflow-hidden ${isLight ? 'bg-white' : 'bg-black'} px-6 max-[768px]:h-auto max-[768px]:min-h-svh`}
     >
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center text-center">
         {/* HEADLINE — 순차 등장 (가운데 정렬) */}
@@ -45,7 +45,7 @@ export default function ShowcaseSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0 }}
           transition={{ duration: 0.9, ease: EASE, delay: 0.2 }}
-          className={`text-4xl font-bold leading-tight ${titleColor} sm:text-5xl max-[768px]:text-[30px] max-[768px]:leading-snug`}
+          className={`mt-[536px] max-[768px]:mt-[180px] text-4xl font-bold leading-tight ${titleColor} sm:text-5xl max-[768px]:text-[30px] max-[768px]:leading-snug`}
         >
           {HEADLINE.map((line, i) => (
             <motion.span
