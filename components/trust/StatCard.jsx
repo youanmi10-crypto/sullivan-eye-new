@@ -40,7 +40,7 @@ export default function StatCard({ icon: Icon, label, segments, index }) {
         <Icon size={40} strokeWidth={1.4} />
       </motion.div>
 
-      <p className={`mb-5 text-xs font-medium tracking-wide ${labelColor} sm:text-sm`}>
+      <p className={`mb-5 text-sm font-bold tracking-wide ${labelColor} sm:text-base`}>
         {label}
       </p>
 
@@ -51,12 +51,12 @@ export default function StatCard({ icon: Icon, label, segments, index }) {
               <span
                 key={i}
                 className={
-                  'font-bold tabular-nums ' +
+                  'font-medium tabular-nums ' +
                   (seg.size === 'xl'
-                    ? 'text-6xl sm:text-7xl'
-                    : seg.size === 'lg'
                     ? 'text-5xl sm:text-6xl'
-                    : 'text-3xl sm:text-4xl')
+                    : seg.size === 'lg'
+                    ? 'text-4xl sm:text-5xl'
+                    : 'text-2xl sm:text-3xl')
                 }
               >
                 {seg.value === 'count' ? (
