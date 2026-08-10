@@ -47,7 +47,7 @@ function Divider({ text }) {
       variants={dividerVariants}
       className="flex flex-col items-center justify-center py-6"
     >
-      <span className={`text-2xl font-bold tracking-tight ${isLight ? 'text-black' : 'text-white'} sm:text-3xl`}>
+      <span className={`mt-3 text-2xl font-bold tracking-tight ${isLight ? 'text-black' : 'text-white'} sm:text-3xl`}>
         {text}
       </span>
     </motion.div>

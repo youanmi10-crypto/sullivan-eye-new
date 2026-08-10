@@ -78,7 +78,9 @@ export default function StatCard({ icon: Icon, label, segments, desc }) {
                 'font-bold ' +
                 (seg.size === 'sm'
                   ? `ml-1.5 text-sm ${isLight ? 'text-black' : 'text-white/70'} sm:text-base`
-                  : `ml-1 text-lg ${isLight ? 'text-black' : 'text-white/85'} sm:text-xl`)
+                  : seg.size === 'xl'
+                  ? `ml-1 text-5xl ${isLight ? 'text-black' : 'text-white'} sm:text-6xl`
+                  : `ml-1 text-4xl ${isLight ? 'text-black' : 'text-white/85'} sm:text-5xl`)
               }
             >
               {seg.text}
