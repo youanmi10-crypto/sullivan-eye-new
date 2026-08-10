@@ -51,12 +51,12 @@ export default function StatCard({ icon: Icon, label, segments, index }) {
               <span
                 key={i}
                 className={
-                  'font-medium tabular-nums ' +
+                  'font-bold tabular-nums ' +
                   (seg.size === 'xl'
-                    ? 'text-5xl sm:text-6xl'
+                    ? 'text-6xl sm:text-7xl'
                     : seg.size === 'lg'
-                    ? 'text-4xl sm:text-5xl'
-                    : 'text-2xl sm:text-3xl')
+                    ? 'text-5xl sm:text-6xl'
+                    : 'text-3xl sm:text-4xl')
                 }
               >
                 {seg.value === 'count' ? (
