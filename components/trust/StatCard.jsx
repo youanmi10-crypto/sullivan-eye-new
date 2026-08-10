@@ -38,7 +38,7 @@ export default function StatCard({ icon: Icon, label, segments, desc, image }) {
     >
       <motion.div
         variants={iconVariants}
-        className={`mb-6 flex h-16 w-16 items-center justify-center ${iconColor}`}
+        className={`mb-6 flex items-center justify-center ${image ? 'w-full' : `h-16 w-16 ${iconColor}`}`}
       >
         {image ? (
           <img
