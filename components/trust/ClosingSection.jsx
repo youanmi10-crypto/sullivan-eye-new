@@ -82,7 +82,7 @@ export default function ClosingSection() {
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden bg-[#111111] px-6 pb-16 pt-28 sm:px-10 sm:pt-36"
+      className={`relative overflow-hidden ${isLight ? 'bg-white' : 'bg-[#111111]'} px-6 pb-16 pt-28 sm:px-10 sm:pt-36`}
     >
       {/* 위쪽 중앙 Spotlight (CSS radial-gradient only) */}
       <motion.div

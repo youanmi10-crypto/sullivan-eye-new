@@ -1,16 +1,10 @@
-import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 /**
  * 현재 경로가 /light 라우트인지 판별.
- * CLI/SSR 환경에서도 안전하게 동작하도록 마운트 후에만 실제 값을 반환.
+ * usePathname은 서버 렌더 시점에도 동작하므로 초기 HTML부터 올바른 테마가 적용된다.
  */
 export function useIsLightTheme(): boolean {
-  const [isLight, setIsLight] = useState(false);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    setIsLight(window.location.pathname.startsWith("/light"));
-  }, []);
-
-  return isLight;
+  const pathname = usePathname();
+  return pathname?.startsWith("/light") ?? false;
 }

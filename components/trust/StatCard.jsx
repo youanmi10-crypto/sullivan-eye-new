@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import CountUp from './CountUp'
+import { useIsLightTheme } from '@/components/useIsLightTheme'
 
 const cardVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -22,6 +23,10 @@ const iconVariants = {
 }
 
 export default function StatCard({ icon: Icon, label, segments, index }) {
+  const isLight = useIsLightTheme()
+  const iconColor = isLight ? 'text-black/90' : 'text-white/90'
+  const labelColor = isLight ? 'text-black/55' : 'text-white/55'
+  const numColor = isLight ? 'text-black' : 'text-white'
   return (
     <motion.div
       variants={cardVariants}
@@ -29,16 +34,16 @@ export default function StatCard({ icon: Icon, label, segments, index }) {
     >
       <motion.div
         variants={iconVariants}
-        className="mb-7 flex h-12 w-12 items-center justify-center text-white/90"
+        className={`mb-7 flex h-12 w-12 items-center justify-center ${iconColor}`}
       >
         <Icon size={40} strokeWidth={1.4} />
       </motion.div>
 
-      <p className="mb-5 text-xs font-medium tracking-wide text-white/55 sm:text-sm">
+      <p className={`mb-5 text-xs font-medium tracking-wide ${labelColor} sm:text-sm`}>
         {label}
       </p>
 
-      <div className="flex flex-wrap items-baseline justify-center leading-none text-white">
+      <div className={`flex flex-wrap items-baseline justify-center leading-none ${numColor}`}>
         {segments.map((seg, i) => {
           if (seg.type === 'num') {
             return (
@@ -68,8 +73,8 @@ export default function StatCard({ icon: Icon, label, segments, index }) {
               className={
                 'font-medium ' +
                 (seg.size === 'sm'
-                  ? 'ml-1.5 text-sm text-white/70 sm:text-base'
-                  : 'ml-1 text-lg text-white/85 sm:text-xl')
+                  ? `ml-1.5 text-sm ${isLight ? 'text-black/70' : 'text-white/70'} sm:text-base`
+                  : `ml-1 text-lg ${isLight ? 'text-black/85' : 'text-white/85'} sm:text-xl`)
               }
             >
               {seg.text}

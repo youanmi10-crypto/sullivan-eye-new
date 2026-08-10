@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
+import { useIsLightTheme } from '@/components/useIsLightTheme'
 
 const easeOut = [0.16, 1, 0.3, 1]
 
@@ -68,6 +69,7 @@ function TuatLogo() {
 }
 
 export default function PartnersSection() {
+  const isLight = useIsLightTheme()
   const ref = useRef(null)
 
   const { scrollYProgress } = useScroll({
@@ -76,11 +78,12 @@ export default function PartnersSection() {
   })
   const spotY = useTransform(scrollYProgress, [0, 1], [0, 80])
   const spotOpacity = useTransform(scrollYProgress, [0, 1], [0.18, 0.08])
+  const spotlightColor = isLight ? 'rgba(0,0,0,1)' : 'rgba(255,255,255,1)'
 
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden bg-[#151515] px-6 py-28 sm:px-10 sm:py-36"
+      className={`relative overflow-hidden ${isLight ? 'bg-white' : 'bg-[#151515]'} px-6 py-28 sm:px-10 sm:py-36`}
     >
       {/* 상단 중앙 Spot Light (CSS radial-gradient only) */}
       <motion.div
@@ -91,7 +94,7 @@ export default function PartnersSection() {
           className="h-[600px] w-[1000px] sm:h-[800px] sm:w-[1400px] max-[768px]:h-[300px] max-[768px]:w-[140vw] max-[768px]:opacity-50"
           style={{
             background:
-              'radial-gradient(ellipse 50% 50% at 50% 0%, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 70%)',
+              `radial-gradient(ellipse 50% 50% at 50% 0%, ${spotlightColor} 0%, rgba(255,255,255,0) 70%)`,
             opacity: 1, // opacity 는 motion 이 관리
           }}
         />
@@ -109,10 +112,10 @@ export default function PartnersSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0 }}
           transition={{ duration: 1.0, ease: easeOut, delay: 0.3 }}
-          className="mb-24 text-center sm:mb-32"
+          className={`mb-24 text-center sm:mb-32 ${isLight ? 'text-black' : 'text-white'}`}
         >
           <h2
-            className="font-bold leading-[1.25] text-white"
+            className={`font-bold leading-[1.25] ${isLight ? 'text-black' : 'text-white'}`}
             style={{ fontSize: 'clamp(1.6rem, 4.6vw, 3.4rem)' }}
           >
             <span className="whitespace-nowrap max-[768px]:whitespace-normal">
@@ -144,12 +147,12 @@ export default function PartnersSection() {
               }}
               className="group w-full"
             >
-              <div className="rounded-[20px] px-6 py-8 text-center transition-colors duration-300 hover:bg-white/[0.03] sm:px-10">
-                <p className="mb-3 text-[1.5rem] font-extrabold leading-tight text-white sm:text-[2.5rem] max-[768px]:text-[22px]">
+              <div className={`rounded-[20px] px-6 py-8 text-center transition-colors duration-300 ${isLight ? 'hover:bg-black/[0.03]' : 'hover:bg-white/[0.03]'} sm:px-10`}>
+                <p className={`mb-3 text-[1.5rem] font-extrabold leading-tight ${isLight ? 'text-black' : 'text-white'} sm:text-[2.5rem] max-[768px]:text-[22px]`}>
                   {p.name}
                 </p>
                 <div
-                  className="space-y-1 text-sm leading-[1.7] text-white/90 sm:text-base max-[768px]:text-[15px]"
+                  className={`space-y-1 text-sm leading-[1.7] ${isLight ? 'text-black/90' : 'text-white/90'} sm:text-base max-[768px]:text-[15px]`}
                 >
                   {p.desc.map((line, j) => (
                     <p key={j}>{line}</p>

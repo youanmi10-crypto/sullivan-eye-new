@@ -124,7 +124,7 @@ export default function AwardsSection() {
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden bg-[#0A0A0A] px-6 py-28 sm:px-10 sm:py-36"
+      className={`relative overflow-hidden ${isLight ? 'bg-white' : 'bg-[#0A0A0A]'} px-6 py-28 sm:px-10 sm:py-36`}
     >
       {/* 미세 도트 그리드 배경 — 데스크톱용 (옵션 A, 0.15) */}
       <div

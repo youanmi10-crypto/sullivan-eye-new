@@ -8,6 +8,7 @@ import AwardsSection from './AwardsSection'
 import PartnersSection from './PartnersSection'
 import ClosingSection from './ClosingSection'
 import Footer from './Footer'
+import { useIsLightTheme } from '@/components/useIsLightTheme'
 
 // 부드러운 easeOutExpo 느낌의 커스텀 이징
 const easeOut = [0.16, 1, 0.3, 1]
@@ -40,23 +41,28 @@ const dividerVariants = {
 }
 
 function Divider({ text }) {
+  const isLight = useIsLightTheme()
+  const line = isLight ? 'bg-black/55' : 'bg-white/55'
   return (
     <motion.div
       variants={dividerVariants}
       className="flex items-center justify-center gap-5 py-6"
     >
-      <span className="h-px -ml-[188px] flex-1 max-w-[235px] bg-white/55" />
+      <span className={`h-px -ml-[188px] flex-1 max-w-[235px] ${line}`} />
       <span className="text-sm font-bold tracking-[0.2em] text-white sm:text-base">
         {text}
       </span>
-      <span className="h-px -mr-[188px] flex-1 max-w-[235px] bg-white/55" />
+      <span className={`h-px -mr-[188px] flex-1 max-w-[235px] ${line}`} />
     </motion.div>
   )
 }
 
 export default function TrustSection() {
+  const isLight = useIsLightTheme()
+  const rootBg = isLight ? 'bg-white' : 'bg-[#111111]'
+  const rootText = isLight ? 'text-black' : 'text-white'
   return (
-    <div className="font-sans text-white bg-[#111111]">
+    <div className={`font-sans ${rootText} ${rootBg}`}>
       {/* 상단 여백 */}
       <div className="h-48 sm:h-64" />
 
@@ -126,7 +132,7 @@ export default function TrustSection() {
           variants={cardsContainer}
           className="mx-auto mt-8 w-full max-w-5xl px-4 pb-32 sm:px-10"
         >
-          <div className="grid grid-cols-3 divide-x divide-white/55">
+          <div className={`grid grid-cols-3 divide-x ${isLight ? 'divide-black/55' : 'divide-white/55'}`}>
             <StatCard
               icon={Globe}
               label="글로벌 서비스 국가 수"
