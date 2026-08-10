@@ -160,31 +160,6 @@ export default function TrustSection() {
               ]}
             />
           </motion.div>
-
-          {/* 통계 시각화 — 가로 막대 */}
-          <motion.div
-            variants={cardsContainer}
-            className="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-3"
-          >
-            {[
-              { label: '글로벌 커버리지', pct: 80 },
-              { label: '다운로드 달성률', pct: 65 },
-              { label: '월간 활성 사용자', pct: 90 },
-            ].map((bar) => (
-              <div key={bar.label} className="flex flex-col gap-2">
-                <span className={`text-xs font-medium ${isLight ? 'text-black/70' : 'text-white/70'}`}>{bar.label}</span>
-                <div className={`h-2 w-full overflow-hidden rounded-full ${isLight ? 'bg-[#E2E2E5]' : 'bg-white/10'}`}>
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${bar.pct}%` }}
-                    viewport={{ once: true, amount: 0 }}
-                    transition={{ duration: 1.2, ease: 'easeOut' }}
-                    className={`h-full rounded-full ${isLight ? 'bg-black' : 'bg-white'}`}
-                  />
-                </div>
-              </div>
-            ))}
-          </motion.div>
         </motion.div>
 
         {/* AWARDS TIMELINE SECTION */}
