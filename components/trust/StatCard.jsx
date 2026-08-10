@@ -22,7 +22,7 @@ const iconVariants = {
   },
 }
 
-export default function StatCard({ icon: Icon, label, segments, desc }) {
+export default function StatCard({ icon: Icon, label, segments, desc, image }) {
   const isLight = useIsLightTheme()
   const iconColor = isLight ? 'text-black' : 'text-white/90'
   const labelColor = isLight ? 'text-black' : 'text-white/55'
@@ -40,7 +40,15 @@ export default function StatCard({ icon: Icon, label, segments, desc }) {
         variants={iconVariants}
         className={`mb-6 flex h-16 w-16 items-center justify-center ${iconColor}`}
       >
-        <Icon size={52} strokeWidth={2.4} />
+        {image ? (
+          <img
+            src={image}
+            alt={label}
+            className="h-20 w-20 rounded-2xl object-contain sm:h-24 sm:w-24"
+          />
+        ) : (
+          <Icon size={52} strokeWidth={2.4} />
+        )}
       </motion.div>
 
       <p className={`mb-4 text-sm font-bold tracking-wide ${labelColor} sm:text-base`}>

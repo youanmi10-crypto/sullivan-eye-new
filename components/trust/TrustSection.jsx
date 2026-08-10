@@ -147,6 +147,7 @@ export default function TrustSection() {
               />
               <StatCard
                 icon={UsersIcon}
+                image="/images/mau-icon.png"
                 label="월별 이용자 수 (MAU)"
                 desc="매월 꾸준히 성장"
                 segments={[
