@@ -124,7 +124,7 @@ export default function TrustSection() {
 
             <motion.div
               variants={cardsContainer}
-              className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-3"
+              className="mt-6 grid grid-cols-1 gap-6 pb-24 sm:grid-cols-3 sm:pb-32"
             >
               <StatCard
                 icon={GlobalIcon}
