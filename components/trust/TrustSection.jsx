@@ -118,13 +118,13 @@ export default function TrustSection() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0 }}
-          className="mx-auto mt-16 w-full max-w-5xl px-7 sm:mt-20 sm:px-10"
+          className="mx-auto mt-32 w-full max-w-5xl px-7 sm:mt-40 sm:px-10"
         >
           <Divider text="설리번 SW" />
 
           <motion.div
             variants={cardsContainer}
-            className={`mt-10 grid grid-cols-3 divide-x rounded-3xl border px-4 py-2 sm:py-4 ${isLight ? 'border-[#E2E2E5]' : 'border-white/15'}`}
+            className={`mt-6 grid grid-cols-3 divide-x rounded-3xl border px-4 py-2 sm:py-4 ${isLight ? 'border-[#E2E2E5]' : 'border-white/15'}`}
           >
             <StatCard
               icon={GlobalIcon}
