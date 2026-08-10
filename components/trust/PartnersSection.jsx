@@ -49,6 +49,7 @@ const PARTNER_LOGOS = [
 ]
 // TUAT 로고 (실제 로고 이미지)
 function TuatLogo() {
+  const isLight = useIsLightTheme()
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
@@ -59,7 +60,7 @@ function TuatLogo() {
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/images/tuat-logo.png"
+        src={isLight ? "/images/tuat-logo-black.png" : "/images/tuat-logo.png"}
         alt="TUAT"
         className="mb-5 h-32 w-auto select-none sm:h-40"
         draggable={false}

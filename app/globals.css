@@ -157,9 +157,11 @@ body {
   --hairline: #e2e2e5;
 }
 
-/* 섹션 사이 얇은 디바이더 */
-.light-theme section + section {
-  border-top: 1px solid var(--hairline);
+/* 섹션 사이 얇은 디바이더 (강하게) */
+.light-theme section + section,
+.light-theme div > section + section,
+.light-theme > section + section {
+  border-top: 1.5px solid var(--hairline);
 }
 
 /* 카드/박스 연회색 보더 */
