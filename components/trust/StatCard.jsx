@@ -22,11 +22,12 @@ const iconVariants = {
   },
 }
 
-export default function StatCard({ icon: Icon, label, segments }) {
+export default function StatCard({ icon: Icon, label, segments, desc }) {
   const isLight = useIsLightTheme()
   const iconColor = isLight ? 'text-black' : 'text-white/90'
   const labelColor = isLight ? 'text-black' : 'text-white/55'
   const numColor = isLight ? 'text-black' : 'text-white'
+  const descColor = isLight ? 'text-black/60' : 'text-white/50'
   return (
     <motion.div
       variants={cardVariants}
@@ -34,12 +35,12 @@ export default function StatCard({ icon: Icon, label, segments }) {
     >
       <motion.div
         variants={iconVariants}
-        className={`mb-7 flex h-12 w-12 items-center justify-center ${iconColor}`}
+        className={`mb-6 flex h-16 w-16 items-center justify-center ${iconColor}`}
       >
-        <Icon size={40} strokeWidth={1.4} />
+        <Icon size={52} strokeWidth={1.4} />
       </motion.div>
 
-      <p className={`mb-5 text-sm font-medium tracking-wide ${labelColor} sm:text-base`}>
+      <p className={`mb-4 text-sm font-medium tracking-wide ${labelColor} sm:text-base`}>
         {label}
       </p>
 
@@ -82,6 +83,12 @@ export default function StatCard({ icon: Icon, label, segments }) {
           )
         })}
       </div>
+
+      {desc && (
+        <p className={`mt-4 text-xs leading-relaxed ${descColor} sm:text-sm`}>
+          {desc}
+        </p>
+      )}
     </motion.div>
   )
 }

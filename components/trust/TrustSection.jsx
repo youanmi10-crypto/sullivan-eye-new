@@ -117,7 +117,7 @@ export default function TrustSection() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0 }}
-          className="mx-auto mt-32 w-full max-w-5xl px-7 sm:mt-40 sm:px-10"
+          className="mx-auto mt-20 w-full max-w-5xl px-7 sm:mt-24 sm:px-10"
         >
           <Divider text="설리번 SW" />
 
@@ -128,6 +128,7 @@ export default function TrustSection() {
             <StatCard
               icon={GlobalIcon}
               label="글로벌 서비스 국가 수"
+              desc="전 세계로 확장 중"
               segments={[
                 { type: 'num', value: 'count', end: 200, size: 'xl' },
                 { type: 'text', text: '개국 이상', size: 'sm' },
@@ -136,6 +137,7 @@ export default function TrustSection() {
             <StatCard
               icon={DownloadIcon}
               label="설리번 플러스 다운로드 수"
+              desc="사용자가 직접 선택"
               segments={[
                 { type: 'num', value: 'count', end: 50, size: 'xl' },
                 { type: 'text', text: '만', size: 'lg' },
@@ -145,6 +147,7 @@ export default function TrustSection() {
             <StatCard
               icon={UsersIcon}
               label="월별 이용자 수 (MAU)"
+              desc="매월 꾸준히 성장"
               segments={[
                 {
                   type: 'num',
@@ -156,6 +159,31 @@ export default function TrustSection() {
                 { type: 'text', text: '명 이상', size: 'sm' },
               ]}
             />
+          </motion.div>
+
+          {/* 통계 시각화 — 가로 막대 */}
+          <motion.div
+            variants={cardsContainer}
+            className="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-3"
+          >
+            {[
+              { label: '글로벌 커버리지', pct: 80 },
+              { label: '다운로드 달성률', pct: 65 },
+              { label: '월간 활성 사용자', pct: 90 },
+            ].map((bar) => (
+              <div key={bar.label} className="flex flex-col gap-2">
+                <span className={`text-xs font-medium ${isLight ? 'text-black/70' : 'text-white/70'}`}>{bar.label}</span>
+                <div className={`h-2 w-full overflow-hidden rounded-full ${isLight ? 'bg-[#E2E2E5]' : 'bg-white/10'}`}>
+                  <motion.div
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${bar.pct}%` }}
+                    viewport={{ once: true, amount: 0 }}
+                    transition={{ duration: 1.2, ease: 'easeOut' }}
+                    className={`h-full rounded-full ${isLight ? 'bg-black' : 'bg-white'}`}
+                  />
+                </div>
+              </div>
+            ))}
           </motion.div>
         </motion.div>
 
