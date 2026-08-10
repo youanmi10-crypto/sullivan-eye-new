@@ -40,10 +40,10 @@ export default function StatCard({ icon: Icon, label, segments, desc }) {
         variants={iconVariants}
         className={`mb-6 flex h-16 w-16 items-center justify-center ${iconColor}`}
       >
-        <Icon size={52} strokeWidth={1.4} />
+        <Icon size={52} strokeWidth={2.4} />
       </motion.div>
 
-      <p className={`mb-4 text-sm font-medium tracking-wide ${labelColor} sm:text-base`}>
+      <p className={`mb-4 text-sm font-bold tracking-wide ${labelColor} sm:text-base`}>
         {label}
       </p>
 
@@ -75,7 +75,7 @@ export default function StatCard({ icon: Icon, label, segments, desc }) {
             <span
               key={i}
               className={
-                'font-medium ' +
+                'font-bold ' +
                 (seg.size === 'sm'
                   ? `ml-1.5 text-sm ${isLight ? 'text-black' : 'text-white/70'} sm:text-base`
                   : `ml-1 text-lg ${isLight ? 'text-black' : 'text-white/85'} sm:text-xl`)
