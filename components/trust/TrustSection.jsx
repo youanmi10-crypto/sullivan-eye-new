@@ -49,7 +49,7 @@ function Divider({ text }) {
       className="flex items-center justify-center gap-5 py-6"
     >
       <span className={`h-px -ml-[188px] flex-1 max-w-[235px] ${line}`} />
-      <span className={`text-2xl font-bold tracking-[0.2em] ${isLight ? 'text-black' : 'text-white'} sm:text-3xl`}>
+      <span className={`text-2xl font-bold tracking-tight ${isLight ? 'text-black' : 'text-white'} sm:text-3xl`}>
         {text}
       </span>
       <span className={`h-px -mr-[188px] flex-1 max-w-[235px] ${line}`} />
