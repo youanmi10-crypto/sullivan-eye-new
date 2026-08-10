@@ -128,6 +128,7 @@ export default function TrustSection() {
             >
               <StatCard
                 icon={GlobalIcon}
+                image="/images/global-icon.png"
                 label="글로벌 서비스 국가 수"
                 desc="전 세계로 확장 중"
                 segments={[
