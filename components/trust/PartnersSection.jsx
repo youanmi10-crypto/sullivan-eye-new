@@ -148,7 +148,7 @@ export default function PartnersSection() {
               }}
               className="group w-full"
             >
-              <div className={`rounded-[20px] px-6 py-8 text-center transition-colors duration-300 ${isLight ? 'border border-[#E2E2E5] hover:bg-[#E2E2E5]/40' : 'hover:bg-white/[0.03]'} sm:px-10`}>
+              <div className={`px-6 py-8 text-center sm:px-10`}>
                 <p className={`mb-3 text-[1.5rem] font-extrabold leading-tight ${isLight ? 'text-black' : 'text-white'} sm:text-[2.5rem] max-[768px]:text-[22px]`}>
                   {p.name}
                 </p>
