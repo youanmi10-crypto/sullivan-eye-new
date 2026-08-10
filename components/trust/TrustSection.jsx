@@ -134,7 +134,7 @@ export default function TrustSection() {
           variants={cardsContainer}
           className="mx-auto mt-8 w-full max-w-5xl px-4 pb-32 sm:px-10"
         >
-          <div className={`grid grid-cols-3 divide-x ${isLight ? 'divide-black/55' : 'divide-white/55'}`}>
+          <div className="grid grid-cols-3">
             <StatCard
               icon={GlobalIcon}
               label="글로벌 서비스 국가 수"
