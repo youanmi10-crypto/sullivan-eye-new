@@ -44,7 +44,7 @@ export default function StatCard({ icon: Icon, label, segments, desc, image }) {
           <img
             src={image}
             alt={label}
-            className="h-20 w-20 rounded-2xl object-contain sm:h-24 sm:w-24"
+            className="h-auto w-full max-w-[220px] rounded-2xl object-contain sm:max-w-[260px]"
           />
         ) : (
           <Icon size={52} strokeWidth={2.4} />
