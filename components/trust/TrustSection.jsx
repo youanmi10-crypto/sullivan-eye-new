@@ -123,7 +123,7 @@ export default function TrustSection() {
 
           <motion.div
             variants={cardsContainer}
-            className={`mt-6 grid grid-cols-3 divide-x rounded-3xl border px-4 py-2 sm:py-4 ${isLight ? 'border-[#E2E2E5]' : 'border-white/15'}`}
+            className={`mt-6 grid grid-cols-3 divide-x rounded-3xl border px-4 py-2 pb-10 mb-24 sm:py-4 sm:pb-12 sm:mb-32 ${isLight ? 'border-[#E2E2E5]' : 'border-white/15'}`}
           >
             <StatCard
               icon={GlobalIcon}
