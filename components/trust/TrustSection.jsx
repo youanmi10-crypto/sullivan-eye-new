@@ -62,8 +62,7 @@ export default function TrustSection() {
   const bodyColor = isLight ? 'text-black' : 'text-white/85'
   return (
     <div className={`font-sans ${rootText} ${rootBg}`}>
-      {/* 상단 여백 */}
-      <div className="h-48 sm:h-64" />
+      {/* 상단 여백 최소화 — 본문이 페이지 제일 위에 오도록 */}
 
       <motion.section
         initial="hidden"
