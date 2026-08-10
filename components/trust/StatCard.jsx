@@ -24,13 +24,14 @@ const iconVariants = {
 
 export default function StatCard({ icon: Icon, label, segments, index }) {
   const isLight = useIsLightTheme()
-  const iconColor = isLight ? 'text-black' : 'text-white/90'
+  const iconColor = isLight ? 'text-[#7C5CFF]' : 'text-white/90'
   const labelColor = isLight ? 'text-black' : 'text-white/55'
   const numColor = isLight ? 'text-black' : 'text-white'
+  const cardBorder = isLight ? 'rounded-3xl border border-[#E2E2E5] px-6 py-8' : ''
   return (
     <motion.div
       variants={cardVariants}
-      className="flex flex-col items-center px-4 text-center"
+      className={`flex flex-col items-center px-4 text-center ${cardBorder}`}
     >
       <motion.div
         variants={iconVariants}
