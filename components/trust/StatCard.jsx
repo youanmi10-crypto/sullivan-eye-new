@@ -28,13 +28,10 @@ export default function StatCard({ icon: Icon, label, segments, desc }) {
   const labelColor = isLight ? 'text-black' : 'text-white/55'
   const numColor = isLight ? 'text-black' : 'text-white'
   const descColor = isLight ? 'text-black/60' : 'text-white/50'
-  const cardBorder = isLight
-    ? 'rounded-3xl border border-[#E2E2E5] bg-white px-6 py-8'
-    : 'rounded-3xl border border-white/15 px-6 py-8'
   return (
     <motion.div
       variants={cardVariants}
-      className={`flex flex-col items-center px-4 py-8 text-center ${cardBorder}`}
+      className="flex flex-col items-center px-4 py-8 text-center"
     >
       <motion.div
         variants={iconVariants}

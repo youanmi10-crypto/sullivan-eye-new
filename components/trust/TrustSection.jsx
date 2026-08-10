@@ -110,69 +110,71 @@ export default function TrustSection() {
         </div>
       </motion.section>
 
-      {/* 아래 부분 전체 — 설리번 SW부터 끝까지 회색 배경 */}
-      <div className={`[display:flow-root] ${isLight ? 'bg-[#F5F5F7]' : ''}`}>
-        {/* DIVIDER + 카드 박스 */}
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0 }}
-          className="mx-auto mt-28 w-full max-w-5xl px-7 sm:mt-36 sm:px-10"
-        >
-          <Divider text="설리번 SW" />
-
+      {/* 아래 부분 — 본문과 설리번 SW 사이 흰 여백 (mt-28) */}
+      <div className="[display:flow-root]">
+        {/* 설리번 SW부터 페이지 끝까지 회색 배경 */}
+        <div className={isLight ? 'bg-[#F5F5F7]' : ''}>
           <motion.div
-            variants={cardsContainer}
-            className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-3"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0 }}
+            className="mx-auto mt-28 w-full max-w-5xl px-7 sm:mt-36 sm:px-10"
           >
-            <StatCard
-              icon={GlobalIcon}
-              label="글로벌 서비스 국가 수"
-              desc="전 세계로 확장 중"
-              segments={[
-                { type: 'num', value: 'count', end: 200, size: 'xl' },
-                { type: 'text', text: '개국 이상', size: 'sm' },
-              ]}
-            />
-            <StatCard
-              icon={DownloadIcon}
-              label="설리번 플러스 다운로드 수"
-              desc="사용자가 직접 선택"
-              segments={[
-                { type: 'num', value: 'count', end: 50, size: 'xl' },
-                { type: 'text', text: '만', size: 'lg' },
-                { type: 'text', text: '명 이상', size: 'sm' },
-              ]}
-            />
-            <StatCard
-              icon={UsersIcon}
-              label="월별 이용자 수 (MAU)"
-              desc="매월 꾸준히 성장"
-              segments={[
-                {
-                  type: 'num',
-                  value: 'count',
-                  end: 25000,
-                  size: 'xl',
-                  format: formatKorean,
-                },
-                { type: 'text', text: '명 이상', size: 'sm' },
-              ]}
-            />
+            <Divider text="설리번 SW" />
+
+            <motion.div
+              variants={cardsContainer}
+              className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-3"
+            >
+              <StatCard
+                icon={GlobalIcon}
+                label="글로벌 서비스 국가 수"
+                desc="전 세계로 확장 중"
+                segments={[
+                  { type: 'num', value: 'count', end: 200, size: 'xl' },
+                  { type: 'text', text: '개국 이상', size: 'sm' },
+                ]}
+              />
+              <StatCard
+                icon={DownloadIcon}
+                label="설리번 플러스 다운로드 수"
+                desc="사용자가 직접 선택"
+                segments={[
+                  { type: 'num', value: 'count', end: 50, size: 'xl' },
+                  { type: 'text', text: '만', size: 'lg' },
+                  { type: 'text', text: '명 이상', size: 'sm' },
+                ]}
+              />
+              <StatCard
+                icon={UsersIcon}
+                label="월별 이용자 수 (MAU)"
+                desc="매월 꾸준히 성장"
+                segments={[
+                  {
+                    type: 'num',
+                    value: 'count',
+                    end: 25000,
+                    size: 'xl',
+                    format: formatKorean,
+                  },
+                  { type: 'text', text: '명 이상', size: 'sm' },
+                ]}
+              />
+            </motion.div>
           </motion.div>
-        </motion.div>
 
-        {/* AWARDS TIMELINE SECTION */}
-        <AwardsSection />
+          {/* AWARDS TIMELINE SECTION */}
+          <AwardsSection />
 
-        {/* PARTNERS & COLLABORATION SECTION */}
-        <PartnersSection />
+          {/* PARTNERS & COLLABORATION SECTION */}
+          <PartnersSection />
 
-        {/* CLOSING HERO SECTION */}
-        <ClosingSection />
+          {/* CLOSING HERO SECTION */}
+          <ClosingSection />
 
-        {/* FOOTER */}
-        <Footer />
+          {/* FOOTER */}
+          <Footer />
+        </div>
       </div>
     </div>
   )
