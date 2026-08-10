@@ -40,7 +40,7 @@ export default function StatCard({ icon: Icon, label, segments, index }) {
         <Icon size={40} strokeWidth={1.4} />
       </motion.div>
 
-      <p className={`mb-5 text-sm font-bold tracking-wide ${labelColor} sm:text-base`}>
+      <p className={`mb-5 text-sm font-medium tracking-wide ${labelColor} sm:text-base`}>
         {label}
       </p>
 
