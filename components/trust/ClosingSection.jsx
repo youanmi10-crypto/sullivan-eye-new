@@ -44,8 +44,6 @@ export default function ClosingSection() {
   const [hovered, setHovered] = useState(false)
 
   const spotlightColor = isLight ? 'rgba(0,0,0,1)' : 'rgba(255,255,255,1)'
-  const glowTint = isLight ? '0,0,0' : '201,168,76'
-  const reflectionColor = isLight ? 'rgba(0,0,0,0.12)' : 'rgba(255,255,255,0.12)'
   const fallbackBorder = isLight ? 'border-black/15' : 'border-white/15'
   const fallbackBg = isLight
     ? 'linear-gradient(160deg, rgba(0,0,0,0.10), rgba(0,0,0,0.02) 45%, rgba(0,0,0,0.06))'
@@ -54,9 +52,6 @@ export default function ClosingSection() {
     ? 'inset 0 1px 1px rgba(0,0,0,0.25), 0 30px 80px rgba(0,0,0,0.15)'
     : 'inset 0 1px 1px rgba(255,255,255,0.25), 0 30px 80px rgba(0,0,0,0.6)'
   const logoColor = isLight ? 'text-black' : 'text-white/40'
-  const shimmerColor = isLight
-    ? 'linear-gradient(105deg, transparent, rgba(0,0,0,0.3), transparent)'
-    : 'linear-gradient(105deg, transparent, rgba(255,255,255,0.5), transparent)'
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -143,19 +138,6 @@ export default function ClosingSection() {
 
         {/* 제품 이미지 영역 (충분한 여백) */}
         <div className="relative mt-32 sm:mt-40">
-          {/* 안경에서 퍼지는 동그란 골드 글로우 (옵션 B) */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-          >
-            <div
-              className="h-[520px] w-[520px] rounded-full sm:h-[680px] sm:w-[680px] max-[768px]:h-[360px] max-[768px]:w-[360px]"
-              style={{
-                background:
-                  `radial-gradient(circle at center, rgba(${glowTint},0.28) 0%, rgba(${glowTint},0.10) 35%, rgba(${glowTint},0) 70%)`,
-              }}
-            />
-          </div>
           <motion.div
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -185,38 +167,7 @@ export default function ClosingSection() {
                 ) : (
                   <ProductFallback />
                 )}
-
-                {/* Shimmer — 로고 부분을 한 번 스쳐 지나가는 은은한 빛 */}
-                {!productImg && (
-                  <motion.div
-                    initial={{ x: '-120%', opacity: 0 }}
-                    whileInView={{ x: '120%', opacity: [0, 0.6, 0] }}
-                    viewport={{ once: true, amount: 0 }}
-                    transition={{ duration: 1.6, ease: 'easeInOut', delay: 0.2 }}
-                    className="pointer-events-none absolute inset-0 overflow-hidden rounded-[40px]"
-                  >
-                    <div
-                      className="absolute top-1/2 h-[60%] w-1/3 -translate-y-1/2"
-                      style={{
-                        background:
-                          shimmerColor,
-                        filter: 'blur(10px)',
-                      }}
-                    />
-                  </motion.div>
-                )}
               </motion.div>
-
-              {/* 바닥 반사 그림자 */}
-              <div
-                className="pointer-events-none absolute -bottom-10 left-1/2 h-[120px] w-[320px] -translate-x-1/2"
-                style={{
-                  background:
-                    `radial-gradient(ellipse at center, ${reflectionColor} 0%, rgba(255,255,255,0) 70%)`,
-                  filter: 'blur(70px)',
-                  opacity: 0.2,
-                }}
-              />
             </motion.div>
           </motion.div>
         </div>
