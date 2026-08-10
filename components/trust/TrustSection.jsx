@@ -110,20 +110,20 @@ export default function TrustSection() {
         </div>
       </motion.section>
 
-      {/* 아래 부분 전체 — 본문 바로 아래부터 회색 배경 */}
+      {/* 아래 부분 전체 — 설리번 SW부터 끝까지 회색 배경 */}
       <div className={`[display:flow-root] ${isLight ? 'bg-[#F5F5F7]' : ''}`}>
-        {/* DIVIDER + 통합 카드 박스 */}
+        {/* DIVIDER + 카드 박스 */}
         <motion.div
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0 }}
-          className="mx-auto mt-20 w-full max-w-5xl px-7 sm:mt-24 sm:px-10"
+          className="mx-auto mt-28 w-full max-w-5xl px-7 sm:mt-36 sm:px-10"
         >
           <Divider text="설리번 SW" />
 
           <motion.div
             variants={cardsContainer}
-            className={`mt-6 grid grid-cols-3 divide-x rounded-3xl border px-4 py-2 pb-10 mb-24 sm:py-4 sm:pb-12 sm:mb-32 ${isLight ? 'border-[#E2E2E5] bg-white' : 'border-white/15'}`}
+            className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-3"
           >
             <StatCard
               icon={GlobalIcon}
