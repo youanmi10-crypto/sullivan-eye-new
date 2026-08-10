@@ -92,22 +92,22 @@ export default function TrustSection() {
         </motion.p>
 
         {/* BODY — 한 줄씩 fade-up */}
-        <div className="mt-10 max-w-2xl space-y-3 sm:mt-12">
+        <div className="mt-10 max-w-2xl space-y-2 sm:mt-12">
           <motion.p
             variants={bodyLine}
-            className={`text-left text-base leading-relaxed ${bodyColor} sm:text-lg`}
+            className={`text-left text-base leading-normal ${bodyColor} sm:text-lg`}
           >
             수많은 연구와 AI 기술이 만든 결과
           </motion.p>
           <motion.p
             variants={bodyLine}
-            className={`text-left text-base leading-relaxed ${bodyColor} sm:text-lg`}
+            className={`text-left text-base leading-normal ${bodyColor} sm:text-lg`}
           >
             그러나 우리가 만드는 것은 기술이 아닙니다.
           </motion.p>
           <motion.p
             variants={bodyLine}
-            className={`text-left text-base leading-relaxed ${bodyColor} sm:text-lg`}
+            className={`text-left text-base leading-normal ${bodyColor} sm:text-lg`}
           >
             일상을 위한 새로운 가능성입니다.
           </motion.p>
