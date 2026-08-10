@@ -137,6 +137,7 @@ export default function TrustSection() {
               />
               <StatCard
                 icon={DownloadIcon}
+                image="/images/plus-icon.jpg"
                 label="설리번 플러스 다운로드 수"
                 desc="사용자가 직접 선택"
                 segments={[
