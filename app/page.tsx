@@ -13,10 +13,12 @@ import {
   ContinuousBeam,
 } from "@/components/lighting/GlobalLighting";
 import { ThemeProvider } from "@/components/useIsLightTheme";
+import TuatLogo from "@/components/TuatLogo";
 
 export default function Home() {
   return (
     <ThemeProvider theme="dark">
+      <TuatLogo />
       <main className="relative bg-black">
         {/* Global Lighting System */}
         <AmbientOverlay />

@@ -133,8 +133,7 @@ export default function ClosingSection() {
           className={`mt-8 font-medium ${isLight ? 'text-black' : 'text-white/90'}`}
           style={{ fontSize: 'clamp(1.6rem, 5vw, 3rem)' }}
         >
-          당신의 시선이 되는{' '}
-          <span className={isLight ? 'text-[#7C5CFF]' : ''}>AI</span>
+          당신의 시선이 되는 AI
         </motion.p>
 
         {/* 제품 이미지 영역 (충분한 여백) */}

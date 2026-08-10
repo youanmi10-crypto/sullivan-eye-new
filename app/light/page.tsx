@@ -9,10 +9,12 @@ import TechSection from "@/components/tech/TechSection";
 import ExperienceSection from "@/components/experience/ExperienceSection";
 import TrustSection from "@/components/trust/TrustSection";
 import { ThemeProvider } from "@/components/useIsLightTheme";
+import TuatLogo from "@/components/TuatLogo";
 
 export default function LightHome() {
   return (
     <ThemeProvider theme="light">
+      <TuatLogo />
       <main className="light-theme relative bg-white">
         <div className="relative z-10">
           {/* 1~4번 섹션 */}
