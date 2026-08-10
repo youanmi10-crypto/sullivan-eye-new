@@ -51,7 +51,7 @@ function Divider({ text }) {
       <span className={`text-2xl font-normal tracking-tight ${isLight ? 'text-black' : 'text-white'} sm:text-3xl`}>
         {text}
       </span>
-      <span className={`mt-6 w-px flex-1 ${line}`} style={{ height: 'clamp(48px, 8vw, 96px)' }} />
+      <span className={`mt-6 block w-px ${line}`} style={{ height: 'clamp(48px, 8vw, 96px)' }} />
     </motion.div>
   )
 }
