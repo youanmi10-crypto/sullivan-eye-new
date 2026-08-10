@@ -47,7 +47,7 @@ function Divider({ text }) {
       variants={dividerVariants}
       className="flex flex-col items-center justify-center py-6"
     >
-      <span className={`mt-3 text-2xl font-bold tracking-tight ${isLight ? 'text-black' : 'text-white'} sm:text-3xl`}>
+      <span className={`mt-4 text-2xl font-bold tracking-tight ${isLight ? 'text-black' : 'text-white'} sm:text-3xl`}>
         {text}
       </span>
     </motion.div>
@@ -141,7 +141,7 @@ export default function TrustSection() {
                 desc="사용자가 직접 선택"
                 segments={[
                   { type: 'num', value: 'count', end: 50, size: 'xl' },
-                  { type: 'text', text: '만', size: 'xl' },
+                  { type: 'text', text: '만', size: 'xl', weight: 'medium' },
                   { type: 'text', text: '명 이상', size: 'sm' },
                 ]}
               />
