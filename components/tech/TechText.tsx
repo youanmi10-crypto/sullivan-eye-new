@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
+import { useIsLightTheme } from "@/components/useIsLightTheme";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -22,6 +23,9 @@ const BODY_LINES = [
 ];
 
 export default function TechText() {
+  const isLight = useIsLightTheme();
+  const strongFrom = isLight ? "#666666" : "#a3a3a3";
+  const strongTo = isLight ? "#000000" : "#ffffff";
   return (
     <motion.div
       variants={container}
@@ -81,8 +85,8 @@ export default function TechText() {
           당신에게 필요한 것은
           <br />
           <motion.strong
-            initial={{ color: "#a3a3a3" }}
-            whileInView={{ color: "#ffffff" }}
+            initial={{ color: strongFrom }}
+            whileInView={{ color: strongTo }}
             viewport={{ once: true, amount: 0 }}
             transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
             className="font-bold"

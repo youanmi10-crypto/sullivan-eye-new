@@ -8,6 +8,7 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
+import { useIsLightTheme } from "@/components/useIsLightTheme";
 
 /**
  * 이미지가 들어올 자리 (오른쪽 전체 높이).
@@ -15,6 +16,10 @@ import {
  */
 export default function ExperienceImagePlaceholder() {
   const ref = useRef<HTMLDivElement>(null);
+  const isLight = useIsLightTheme();
+  const overlay = isLight
+    ? "linear-gradient(to right, #ffffff 0%, rgba(255,255,255,0.7) 8%, rgba(255,255,255,0.25) 18%, transparent 26%)"
+    : "linear-gradient(to right, #000000 0%, rgba(0,0,0,0.7) 8%, rgba(0,0,0,0.25) 18%, transparent 26%)";
 
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
@@ -67,8 +72,7 @@ export default function ExperienceImagePlaceholder() {
           aria-hidden
           className="pointer-events-none absolute inset-0"
           style={{
-            background:
-              "linear-gradient(to right, #000000 0%, rgba(0,0,0,0.7) 8%, rgba(0,0,0,0.25) 18%, transparent 26%)",
+            background: overlay,
           }}
         />
       </motion.div>

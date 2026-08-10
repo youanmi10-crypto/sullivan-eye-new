@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
+import { useIsLightTheme } from '@/components/useIsLightTheme'
 
 const easeOut = [0.16, 1, 0.3, 1]
 
@@ -72,15 +73,16 @@ const dividerVariants = {
 }
 
 function AwardItem({ year, award, desc, isLast }) {
+  const isLight = useIsLightTheme()
   return (
     <motion.div
       variants={itemVariants}
       className="group w-full"
     >
-      <div className="mx-auto w-full max-w-2xl rounded-2xl px-6 py-8 text-center transition-colors duration-300 hover:bg-white/[0.07] sm:px-10">
+      <div className={`mx-auto w-full max-w-2xl rounded-2xl px-6 py-8 text-center transition-colors duration-300 sm:px-10 ${isLight ? 'hover:bg-black/[0.04]' : 'hover:bg-white/[0.07]'}`}>
         <p
           className="mb-3 text-sm tracking-wide"
-          style={{ color: '#D8D8D8' }}
+          style={{ color: isLight ? '#444444' : '#D8D8D8' }}
         >
           {year}
         </p>
@@ -97,7 +99,7 @@ function AwardItem({ year, award, desc, isLast }) {
           style={{ originX: 0.5 }}
           className="mx-auto h-px w-full max-w-2xl"
         >
-          <div className="h-px w-full bg-white/15" />
+          <div className={`h-px w-full ${isLight ? 'bg-black/15' : 'bg-white/15'}`} />
         </motion.div>
       )}
     </motion.div>
@@ -105,6 +107,7 @@ function AwardItem({ year, award, desc, isLast }) {
 }
 
 export default function AwardsSection() {
+  const isLight = useIsLightTheme()
   const ref = useRef(null)
 
   // Spotlight 미세 Parallax: 스크롤하면 translateY 0 -> 80px
@@ -113,6 +116,10 @@ export default function AwardsSection() {
     offset: ['start end', 'end start'],
   })
   const spotY = useTransform(scrollYProgress, [0, 1], [0, 80])
+
+  const dotColor = isLight ? 'rgba(0,0,0,0.15)' : 'rgba(255,255,255,0.15)'
+  const dotColorMobile = isLight ? 'rgba(0,0,0,0.28)' : 'rgba(255,255,255,0.28)'
+  const spotlightColor = isLight ? 'rgba(0,0,0,1)' : 'rgba(255,255,255,1)'
 
   return (
     <section
@@ -125,7 +132,7 @@ export default function AwardsSection() {
         className="pointer-events-none absolute inset-0 hidden md:block"
         style={{
           backgroundImage:
-            'radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px)',
+            `radial-gradient(circle, ${dotColor} 1px, transparent 1px)`,
           backgroundSize: '24px 24px',
           WebkitMaskImage:
             'linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.35) 60%, transparent 100%)',
@@ -140,7 +147,7 @@ export default function AwardsSection() {
         className="pointer-events-none absolute inset-0 block md:hidden"
         style={{
           backgroundImage:
-            'radial-gradient(circle, rgba(255,255,255,0.28) 1px, transparent 1px)',
+            `radial-gradient(circle, ${dotColorMobile} 1px, transparent 1px)`,
           backgroundSize: '24px 24px',
           WebkitMaskImage:
             'linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.35) 60%, transparent 100%)',
@@ -158,7 +165,7 @@ export default function AwardsSection() {
           className="h-[600px] w-[1000px] sm:h-[800px] sm:w-[1400px] max-[768px]:h-[300px] max-[768px]:w-[140vw] max-[768px]:opacity-50"
           style={{
             background:
-              'radial-gradient(ellipse 50% 50% at 50% 0%, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 65%)',
+              `radial-gradient(ellipse 50% 50% at 50% 0%, ${spotlightColor} 0%, rgba(255,255,255,0) 65%)`,
             opacity: 0.15,
           }}
         />
