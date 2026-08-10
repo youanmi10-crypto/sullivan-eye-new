@@ -138,7 +138,6 @@ export default function TrustSection() {
             <StatCard
               icon={GlobalIcon}
               label="글로벌 서비스 국가 수"
-              index={0}
               segments={[
                 { type: 'num', value: 'count', end: 200, size: 'xl' },
                 { type: 'text', text: '개국 이상', size: 'sm' },
@@ -147,7 +146,6 @@ export default function TrustSection() {
             <StatCard
               icon={DownloadIcon}
               label="설리번 플러스 다운로드 수"
-              index={1}
               segments={[
                 { type: 'num', value: 'count', end: 50, size: 'xl' },
                 { type: 'text', text: '만', size: 'lg' },
@@ -157,7 +155,6 @@ export default function TrustSection() {
             <StatCard
               icon={UsersIcon}
               label="월별 이용자 수 (MAU)"
-              index={2}
               segments={[
                 {
                   type: 'num',
