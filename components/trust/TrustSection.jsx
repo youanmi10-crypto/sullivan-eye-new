@@ -141,7 +141,7 @@ export default function TrustSection() {
                 desc="사용자가 직접 선택"
                 segments={[
                   { type: 'num', value: 'count', end: 50, size: 'xl' },
-                  { type: 'text', text: '만', size: 'lg' },
+                  { type: 'text', text: '만', size: 'xl' },
                   { type: 'text', text: '명 이상', size: 'sm' },
                 ]}
               />
