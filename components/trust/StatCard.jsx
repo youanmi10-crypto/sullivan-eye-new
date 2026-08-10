@@ -44,7 +44,7 @@ export default function StatCard({ icon: Icon, label, segments, desc, image, ima
           <img
             src={image}
             alt={label}
-            className={`h-auto w-full max-w-[170px] ${imageRounded === 'full' ? 'rounded-full' : 'rounded-2xl'} object-contain sm:max-w-[200px] ${imageOpacity ? `opacity-${imageOpacity}` : ''}`}
+            className={`h-auto w-full max-w-[140px] ${imageRounded === 'full' ? 'rounded-full' : 'rounded-2xl'} object-contain sm:max-w-[170px] ${imageOpacity ? `opacity-${imageOpacity}` : ''}`}
           />
         ) : (
           <Icon size={52} strokeWidth={2.4} />
