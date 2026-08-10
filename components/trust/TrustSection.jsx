@@ -42,7 +42,6 @@ const dividerVariants = {
 
 function Divider({ text }) {
   const isLight = useIsLightTheme()
-  const line = isLight ? 'bg-black/55' : 'bg-white/55'
   return (
     <motion.div
       variants={dividerVariants}
@@ -51,7 +50,6 @@ function Divider({ text }) {
       <span className={`text-2xl font-normal tracking-tight ${isLight ? 'text-black' : 'text-white'} sm:text-3xl`}>
         {text}
       </span>
-      <span className={`mt-6 block w-px ${line}`} style={{ height: 'clamp(48px, 8vw, 96px)' }} />
     </motion.div>
   )
 }
