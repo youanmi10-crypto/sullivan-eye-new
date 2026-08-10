@@ -45,7 +45,7 @@ export default function ShowcaseSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0 }}
           transition={{ duration: 0.9, ease: EASE, delay: 0.2 }}
-          className={`mt-[536px] max-[768px]:mt-[180px] text-4xl font-bold leading-tight ${titleColor} sm:text-5xl max-[768px]:text-[30px] max-[768px]:leading-snug`}
+          className={`mt-[536px] max-[768px]:mt-[180px] text-4xl font-bold leading-snug ${titleColor} sm:text-5xl max-[768px]:text-[30px] max-[768px]:leading-snug`}
         >
           {HEADLINE.map((line, i) => (
             <motion.span
