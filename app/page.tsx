@@ -8,31 +8,23 @@ import DesignProductSection from "@/components/design/DesignProductSection";
 import TechSection from "@/components/tech/TechSection";
 import ExperienceSection from "@/components/experience/ExperienceSection";
 import TrustSection from "@/components/trust/TrustSection";
-import {
-  AmbientOverlay,
-  ContinuousBeam,
-} from "@/components/lighting/GlobalLighting";
 import { ThemeProvider } from "@/components/useIsLightTheme";
 import TuatLogo from "@/components/TuatLogo";
 
 export default function Home() {
   return (
-    <ThemeProvider theme="dark">
+    <ThemeProvider theme="light">
       <TuatLogo />
-      <main className="relative bg-black">
-        {/* Global Lighting System */}
-        <AmbientOverlay />
-        <ContinuousBeam />
-
+      <main className="light-theme relative bg-white">
         <div className="relative z-10">
-          {/* 1~4번 섹션: .snap-section (문서 레벨 proximity 스냅 대상) */}
+          {/* 1~4번 섹션 */}
           <HeroSection />
           <ShowcaseSection />
           <Page2 />
           <DesignSection />
           <DesignProductSection />
 
-          {/* 5번 이후: 스냅 없음 → 일반 자유 스크롤 */}
+          {/* 5번 이후 */}
           <TechSection />
           <ExperienceSection />
           <TrustSection />
